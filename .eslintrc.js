@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-08 19:48:14
- * @LastEditTime: 2021-06-14 22:14:25
+ * @LastEditTime: 2021-06-14 22:44:02
  */
 const DOMGlobals = ['window', 'document']
 const NodeGlobals = ['module', 'require']
@@ -11,7 +11,11 @@ module.exports = {
   parserOptions: {
     sourceType: 'module',
   },
-  extends: ['plugin:vue/vue3-recommended'],
+  extends: [
+    'plugin:vue/vue3-recommended',
+    'plugin:vue/essential',
+    '@vue/prettier',
+  ],
   rules: {
     'no-unused-vars': [
       'error',
