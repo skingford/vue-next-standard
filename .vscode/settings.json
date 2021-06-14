@@ -13,5 +13,17 @@
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  // customer config
+  //autoFixedOnSave 设置已废弃，采用如下新的设置
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.format.enable": true,
+  //autoFix默认开启，只需输入字符串数组即可
+  "eslint.validate": ["javascript", "typescript", "vue", "html"],
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.formatOnSave": true,
+  "vetur.validation.template": false,
+  "cSpell.ignoreWords": ["menu", "mixins"]
 }
