@@ -25,5 +25,9 @@
   "editor.wordWrap": "wordWrapColumn",
   "editor.formatOnSave": true,
   "vetur.validation.template": false,
-  "cSpell.ignoreWords": ["menu", "mixins"]
+  "cSpell.ignoreWords": [
+    "menu",
+    "mixins"
+  ],
+  "files.autoSave": "onWindowChange"
 }
