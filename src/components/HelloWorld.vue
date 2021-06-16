@@ -1,5 +1,11 @@
+<!--
+ * @Author: kingford
+ * @Date: 2021-06-13 01:43:14
+ * @LastEditTime: 2021-06-16 22:02:05
+-->
 <template>
   <h1>{{ msg }}</h1>
+  <p>{{ name }}:{{ computedCount }}</p>
 
   <p>
     Recommended IDE setup:
@@ -35,19 +41,34 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue'
+import {
+  ref,
+  defineComponent,
+  reactive,
+  toRefs,
+  computed,
+  watchEffect,
+} from 'vue'
 export default defineComponent({
   name: 'HelloWorld',
   props: {
     msg: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   setup: () => {
     const count = ref(0)
-    return { count }
-  }
+    const state = reactive({
+      name: 'kingford',
+    })
+
+    const computedCount = computed(() => {
+      return count.value++
+    })
+
+    return { count, computedCount, ...toRefs(state) }
+  },
 })
 </script>
 
