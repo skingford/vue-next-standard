@@ -1,17 +1,25 @@
 <!--
  * @Author: kingford
  * @Date: 2021-06-27 11:18:12
- * @LastEditTime: 2021-06-27 11:24:44
+ * @LastEditTime: 2021-06-27 18:24:44
 -->
 <template>
-  <div>ref</div>
+  <div>ref- {{ count }}</div>
+  <button type="button" @click="setCount">+1</button>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   setup() {
-    console.log('setup api');
+    const count = ref(0);
+    const setCount = () => {
+      count.value += 1;
+    };
+    return {
+      count,
+      setCount,
+    };
   },
 });
 </script>
