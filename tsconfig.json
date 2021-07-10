@@ -12,7 +12,8 @@
     // add path
     "baseUrl": "./",
     "paths": {
-      "@": ["src"]
+      "@": ["src"],
+      "@utils/*": ["src/utils/*"]
     }
   },
   "include": [

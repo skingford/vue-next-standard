@@ -1,13 +1,13 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-27 11:14:16
- * @LastEditTime: 2021-06-27 22:06:46
+ * @LastEditTime: 2021-07-10 22:19:53
  */
 import { createRouter, createWebHashHistory } from 'vue-router';
-import refComp from '@/composition/ref.vue';
-import renativeComp from '@/composition/reactive.vue';
-import computedComp from '@/composition/computed.vue';
-import watchComp from '@/composition/watch.vue';
+import refComp from '@/compositions/ref.vue';
+import renativeComp from '@/compositions/reactive.vue';
+import computedComp from '@/compositions/computed.vue';
+import watchComp from '@/compositions/watch.vue';
 
 const routes = [
   { path: '/', component: watchComp },

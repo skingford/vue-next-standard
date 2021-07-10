@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-06-27 12:48:43
+ * @LastEditTime: 2021-07-10 22:22:11
  */
 import path from 'path';
 import { defineConfig } from 'vite';
@@ -14,14 +14,7 @@ export default defineConfig({
     alias: {
       vue: 'vue/dist/vue.esm-bundler.js',
       '@': path.resolve(__dirname, 'src'),
-      components: path.resolve(__dirname, 'src/components'),
-      styles: path.resolve(__dirname, 'src/styles'),
-      plugins: path.resolve(__dirname, 'src/plugins'),
-      views: path.resolve(__dirname, 'src/views'),
-      layouts: path.resolve(__dirname, 'src/layouts'),
-      utils: path.resolve(__dirname, 'src/utils'),
-      apis: path.resolve(__dirname, 'src/apis'),
-      dirs: path.resolve(__dirname, 'src/directives'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
     },
   },
   plugins: [vue(), vueJsx({})],
