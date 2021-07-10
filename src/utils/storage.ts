@@ -1,9 +1,9 @@
 /*
  * @Author: kingford
  * @Date: 2021-04-04 23:02:28
- * @LastEditTime: 2021-07-06 01:11:44
+ * @LastEditTime: 2021-07-10 21:04:25
  */
-import config from '@/config';
+import config from '../config';
 
 export default {
   setItem(key: string, val: any) {

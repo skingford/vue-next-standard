@@ -1,18 +1,24 @@
 /*
  * @Author: kingford
  * @Date: 2021-04-04 23:02:28
- * @LastEditTime: 2021-07-06 01:24:27
+ * @LastEditTime: 2021-07-10 21:02:53
  */
 /**
  * 环境配置封装
  */
 const env = import.meta.env.MODE || 'prod';
 
-interface IEnvItem {
-  [key: string]: unknown;
+interface IEnvConfig {
+  // [key: string]: unknown;
+  [key: string]: IEnvItem;
 }
 
-const EnvConfig: IEnvItem = {
+interface IEnvItem {
+  baseApi: string;
+  mockApi: string;
+}
+
+const EnvConfig: IEnvConfig = {
   dev: {
     baseApi: '/api',
     mockApi:
@@ -34,5 +40,5 @@ export default {
   env,
   mock: false,
   namespace: 'jin',
-  ...(EnvConfig[env] as IEnvItem),
+  ...EnvConfig[env],
 };
