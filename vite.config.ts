@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-16 11:17:11
+ * @LastEditTime: 2021-07-17 01:17:31
  */
 import path from 'path';
 import { defineConfig } from 'vite';
@@ -25,10 +25,6 @@ export default defineConfig({
         // 全局的scss
         additionalData: `@import "./src/styles/global.scss";`,
       },
-      // ant-design-vue 默认使用less
-      less: {
-        javascriptEnabled: true,
-      },
     },
   },
   plugins: [
@@ -39,10 +35,15 @@ export default defineConfig({
     styleImport({
       libs: [
         {
-          libraryName: 'ant-design-vue',
+          libraryName: 'element-plus',
           esModule: true,
+          ensureStyleFile: true,
           resolveStyle: (name) => {
-            return `ant-design-vue/es/${name}/style/index`;
+            name = name.slice(3);
+            return `element-plus/packages/theme-chalk/src/${name}.scss`;
+          },
+          resolveComponent: (name) => {
+            return `element-plus/lib/${name}`;
           },
         },
       ],

@@ -1,14 +1,14 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-16 00:24:54
- * @LastEditTime: 2021-07-16 11:13:59
+ * @LastEditTime: 2021-07-17 01:20:45
  */
 import { App } from 'vue';
 
-import { Button } from 'ant-design-vue';
-const components: any[] = [Button];
+import { ElButton, ElSelect } from 'element-plus';
+const components: any[] = [ElButton, ElSelect];
 
-const useAnt = {
+const useElement = {
   install: function (app: App) {
     components.forEach((v) => {
       app.use(v);
@@ -16,4 +16,4 @@ const useAnt = {
   },
 };
 
-export default useAnt;
+export default useElement;

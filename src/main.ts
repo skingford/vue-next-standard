@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-16 12:02:15
+ * @LastEditTime: 2021-07-17 01:21:00
  */
 import { createApp } from 'vue';
 import { router } from './router';
@@ -13,10 +13,10 @@ import storage from '@utils/storage';
 import 'normalize.css/normalize.css';
 import './styles/index.scss';
 
-import useAnt from './hooks/useAnt';
+import useElement from './hooks/useElement';
 
 const app = createApp(App);
 
 app.config.globalProperties.$storage = storage;
 
-app.use(useAnt).use(router).mount('#app');
+app.use(useElement).use(router).mount('#app');
