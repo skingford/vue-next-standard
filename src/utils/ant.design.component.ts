@@ -1,11 +1,12 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-16 00:24:54
- * @LastEditTime: 2021-07-16 00:33:12
+ * @LastEditTime: 2021-07-16 09:02:00
  */
 import { App } from 'vue';
 
-const components: any[] = [];
+import { Button } from 'ant-design-vue';
+const components: any[] = [Button];
 
 const AntComponent = {
   install: function (app: App) {

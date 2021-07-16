@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-16 00:32:34
+ * @LastEditTime: 2021-07-16 10:02:01
  */
 import { createApp } from 'vue';
 import { router } from './router';
@@ -11,6 +11,7 @@ import storage from '@utils/storage';
 
 // global styles
 import 'normalize.css/normalize.css';
+import 'ant-design-vue/dist/antd.css';
 import './styles/index.scss';
 
 import AntComponent from '@utils/ant.design.component';
