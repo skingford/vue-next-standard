@@ -1,6 +1,12 @@
 @import './common';
 
+html,
+body {
+  font-family: 'PingFangSC';
+}
+
 .login {
+  padding: 20px;
   font-family: 'PingFangSC';
   color: $color;
   background-color: #f5f5f5;
