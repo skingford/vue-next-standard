@@ -1,14 +1,14 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-16 00:34:34
- * @LastEditTime: 2021-07-16 09:11:42
+ * @LastEditTime: 2021-07-16 11:00:05
  */
 import { defineComponent } from 'vue';
 
 export default defineComponent({
   setup() {
     return () => (
-      <div>
+      <div class="login">
         login
         <div>
           <a-button>button</a-button>

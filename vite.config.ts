@@ -1,13 +1,13 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-16 09:37:04
+ * @LastEditTime: 2021-07-16 11:17:11
  */
 import path from 'path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
-import ViteComponents, { AntDesignVueResolver } from 'vite-plugin-components';
+import styleImport from 'vite-plugin-style-import';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -25,15 +25,27 @@ export default defineConfig({
         // 全局的scss
         additionalData: `@import "./src/styles/global.scss";`,
       },
+      // ant-design-vue 默认使用less
+      less: {
+        javascriptEnabled: true,
+      },
     },
   },
   plugins: [
     vue(),
     // 配置vue-jsx插件
     vueJsx({}),
-    // 动态引入ant design组件库
-    ViteComponents({
-      customComponentResolvers: [AntDesignVueResolver({ importStyle: true })],
+    // 动态引入组件库
+    styleImport({
+      libs: [
+        {
+          libraryName: 'ant-design-vue',
+          esModule: true,
+          resolveStyle: (name) => {
+            return `ant-design-vue/es/${name}/style/index`;
+          },
+        },
+      ],
     }),
   ],
   server: {
