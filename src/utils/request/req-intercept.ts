@@ -1,10 +1,10 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-16 01:02:12
- * @LastEditTime: 2021-07-16 01:04:19
+ * @LastEditTime: 2021-07-17 15:24:41
  */
 
-let requestList = []; // api请求记录
+let requestList: any[] = []; // api请求记录
 
 /**
  * 将当前请求进行去重
@@ -13,18 +13,33 @@ let requestList = []; // api请求记录
  * @param {string} key 比对的信息key值
  * @param {number} num 比对的个数
  */
+
+interface reqInterface {
+  funcCancel(): void;
+  [key: string]: any;
+}
+
 class repetition {
-  constructor({ req, requestList, key, num }) {
+  requestList: reqInterface[] = [];
+  cancelList: number[] = [];
+  req;
+  key;
+  num = 1;
+
+  constructor({ req, requestList, key, num }: any) {
     this.requestList = requestList;
     this.req = req;
     this.requestList.push(req);
     this.key = key;
     this.num = num || 1;
     this.cancelList = [];
+
+    console.log('requestList:', this.requestList);
   }
+
   cancelReq() {
     let count = 0;
-    for (let i = 0; i < this.requestList.length; i++) {
+    for (let i: number = 0; i < this.requestList.length; i++) {
       console.log(this.req[this.key], this.requestList[i][this.key]);
       if (this.req[this.key] === this.requestList[i][this.key]) {
         if (count > 0) {
@@ -49,7 +64,7 @@ class repetition {
  * @param {any} config 请求的内容
  * @param {function} funcCancel 取消请求函数
  */
-export const add = (config, funcCancel) => {
+export const add = (config: any, funcCancel: any) => {
   if (!config) {
     return false;
   }
@@ -58,11 +73,13 @@ export const add = (config, funcCancel) => {
     req: genReq(config),
     funcCancel,
   };
+
   let repetit = new repetition({
     req: obj,
     requestList,
     key: 'req',
   });
+
   repetit.cancelReq();
 };
 
@@ -70,7 +87,7 @@ export const add = (config, funcCancel) => {
  * 将请求完成的对象从缓存中移除
  * @param {any} config 请求对象
  */
-export const remove = (config) => {
+export const remove = (config: any) => {
   if (!config) {
     return false;
   }
@@ -85,7 +102,7 @@ export const remove = (config) => {
 };
 
 // 当前请求的api是否已有记录
-export const has = (config) => {
+export const has = (config: any) => {
   if (!config) {
     return false;
   }
@@ -102,7 +119,7 @@ export const has = (config) => {
  * 生成请求记录对象，方面对比
  * @param {object} config 请求对象
  */
-const genReq = (config) => {
+const genReq = (config: any) => {
   if (!config) {
     return '';
   }
@@ -114,7 +131,7 @@ const genReq = (config) => {
   return arrayReq.join('');
 };
 
-const json2Form = (json) => {
+const json2Form = (json: any) => {
   var str = [];
   for (var key in json) {
     if (key !== 't') {

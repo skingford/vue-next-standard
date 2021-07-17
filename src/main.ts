@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-17 01:21:00
+ * @LastEditTime: 2021-07-17 01:28:13
  */
 import { createApp } from 'vue';
 import { router } from './router';
@@ -19,4 +19,4 @@ const app = createApp(App);
 
 app.config.globalProperties.$storage = storage;
 
-app.use(useElement).use(router).mount('#app');
+app.use(useElement, { size: 'small' }).use(router).mount('#app');
