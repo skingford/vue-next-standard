@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-17 01:28:13
+ * @LastEditTime: 2021-07-19 00:59:45
  */
 import { createApp } from 'vue';
 import { router } from './router';
@@ -12,6 +12,7 @@ import storage from '@utils/storage';
 // global styles
 import 'normalize.css/normalize.css';
 import './styles/index.scss';
+import './styles/index.css';
 
 import useElement from './hooks/useElement';
 
