@@ -1,2 +1,7 @@
-# vue-next-standard
-build a standard project
+# vue3-template
+
+## 目录
+
+- vite+vue3+typescript
+
+- element-plus
