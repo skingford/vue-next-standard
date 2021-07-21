@@ -1,13 +1,13 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-19 00:59:45
+ * @LastEditTime: 2021-07-21 15:31:12
  */
 import { createApp } from 'vue';
 import { router } from './router';
 //import App from './App.vue'
 import App from './App';
-import storage from '@utils/storage';
+import { setGlobalProperties } from '@utils/setGlobalProperties';
 
 // global styles
 import 'normalize.css/normalize.css';
@@ -18,6 +18,7 @@ import useElement from './hooks/useElement';
 
 const app = createApp(App);
 
-app.config.globalProperties.$storage = storage;
+// 挂载全局属性
+setGlobalProperties(app);
 
 app.use(useElement, { size: 'small' }).use(router).mount('#app');

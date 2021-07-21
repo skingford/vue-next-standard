@@ -1,9 +1,9 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-16 00:34:34
- * @LastEditTime: 2021-07-19 01:01:25
+ * @LastEditTime: 2021-07-21 15:33:56
  */
-import { defineComponent } from 'vue';
+import { defineComponent, onMounted } from 'vue';
 import { getList } from '../../api/demo';
 
 export default defineComponent({
@@ -13,6 +13,10 @@ export default defineComponent({
         console.log(data);
       });
     };
+
+    onMounted(() => {
+      getListData();
+    });
 
     return () => (
       <div class="login bg-purple-50 font-mono">
