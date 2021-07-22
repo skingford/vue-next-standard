@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-06-16 22:02:05
+ * @LastEditTime: 2021-07-22 09:22:58
 -->
 <template>
   <h1>{{ msg }}</h1>
@@ -34,6 +34,7 @@
   </p>
 
   <button type="button" @click="count++">count is: {{ count }}</button>
+
   <p>
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
@@ -48,7 +49,7 @@ import {
   toRefs,
   computed,
   watchEffect,
-} from 'vue'
+} from 'vue';
 export default defineComponent({
   name: 'HelloWorld',
   props: {
@@ -58,18 +59,18 @@ export default defineComponent({
     },
   },
   setup: () => {
-    const count = ref(0)
+    const count = ref(0);
     const state = reactive({
       name: 'kingford',
-    })
+    });
 
     const computedCount = computed(() => {
-      return count.value++
-    })
+      return count.value++;
+    });
 
-    return { count, computedCount, ...toRefs(state) }
+    return { count, computedCount, ...toRefs(state) };
   },
-})
+});
 </script>
 
 <style scoped>
