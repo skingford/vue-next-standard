@@ -14,7 +14,8 @@
     "paths": {
       "@": ["src"],
       "@utils/*": ["src/utils/*"]
-    }
+    },
+    "typeRoots": ["./node_modules/@types/", "./types"]
   },
   "include": [
     "src/**/*.ts",
