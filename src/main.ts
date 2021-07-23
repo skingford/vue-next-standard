@@ -1,12 +1,12 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-21 15:31:12
+ * @LastEditTime: 2021-07-22 10:37:56
  */
 import { createApp } from 'vue';
 import { router } from './router';
-//import App from './App.vue'
-import App from './App';
+import App from './App.vue';
+// import App from './App';
 import { setGlobalProperties } from '@utils/setGlobalProperties';
 
 // global styles
