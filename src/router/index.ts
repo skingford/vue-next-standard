@@ -8,7 +8,7 @@ import refComp from '@/compositions/ref.vue';
 import renativeComp from '@/compositions/reactive.vue';
 import computedComp from '@/compositions/computed.vue';
 import watchComp from '@/compositions/watch.vue';
-import LayoutComp from '../layout/index';
+import LayoutComp from '../layout/index.vue';
 import LoginComp from '../views/login';
 
 const routes: Array<RouteRecordRaw> = [

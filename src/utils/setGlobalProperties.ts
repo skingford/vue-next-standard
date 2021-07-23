@@ -8,7 +8,10 @@ import { App } from 'vue';
 import { ElMessage } from 'element-plus';
 import storage from '@utils/storage';
 
+const option ={ size: 'mini'}
+
 export function setGlobalProperties(app: App): void {
   app.config.globalProperties.$storage = storage;
   app.config.globalProperties.$message = ElMessage;
+  app.config.globalProperties.$ELEMENT = option;
 }

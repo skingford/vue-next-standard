@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-14 22:23:09
- * @LastEditTime: 2021-07-19 00:52:46
+ * @LastEditTime: 2021-07-23 18:01:04
  */
 module.exports = {
   extends: 'stylelint-config-standard',
@@ -32,8 +32,13 @@ module.exports = {
         ignoreFontFamilies: ['PingFangSC'],
       },
     ],
+
     'length-zero-no-unit': true,
     'rule-empty-line-before': null,
+    'selector-pseudo-class-no-unknown': [
+      true,
+      { ignorePseudoClasses: ['global', ':deep'] },
+    ],
     'unit-whitelist': ['em', 'rem', '%', 's', 'px', 'deg', 'vh', 'vw'],
     'unit-case': 'lower',
     'value-keyword-case': 'lower',

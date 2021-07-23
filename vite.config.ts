@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-23 15:09:40
+ * @LastEditTime: 2021-07-23 15:42:34
  */
 import path from 'path';
 import { defineConfig } from 'vite';
@@ -23,10 +23,11 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         // 全局的scss
-        additionalData: `@import "./src/styles/global.scss";`,
+        additionalData: `@use "./src/styles/global.scss" as *;`,
       },
     },
   },
+
   plugins: [
     vue(),
     // 配置vue-jsx插件
@@ -50,7 +51,7 @@ export default defineConfig({
     }),
   ],
   server: {
-    host: '127.0.0.1',
+    host: '0.0.0.0', //'192.168.10.209'
     port: 4001,
     proxy: {},
   },
