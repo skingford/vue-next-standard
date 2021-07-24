@@ -1,11 +1,11 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-23 16:15:42
- * @LastEditTime: 2021-07-23 18:05:39
+ * @LastEditTime: 2021-07-24 09:33:22
 -->
 <template>
   <div class="flex flex-col layout-menu">
-    <div class="h-12">
+    <div class="h-12 logo">
       <img class="h-12" src="../assets/logo.png" />
     </div>
     <el-scrollbar class="flex-1">
@@ -98,6 +98,10 @@ export default defineComponent({
 <style lang="scss" scoped>
 .layout-menu {
   width: 200px;
+  .logo {
+    background: $bg-primary;
+  }
+  /* stylelint-disable */
   :deep() {
     .el-scrollbar__view,
     .el-menu {

@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-23 15:42:34
+ * @LastEditTime: 2021-07-24 10:09:13
  */
 import path from 'path';
 import { defineConfig } from 'vite';
@@ -16,6 +16,7 @@ export default defineConfig({
       vue: 'vue/dist/vue.esm-bundler.js',
       '@': path.resolve(__dirname, 'src'),
       '@utils': path.resolve(__dirname, 'src/utils'),
+      '@hooks': path.resolve(__dirname, 'src/hooks'),
     },
   },
   // 全局css

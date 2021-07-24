@@ -1,14 +1,15 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-27 11:14:16
- * @LastEditTime: 2021-07-16 09:04:44
+ * @LastEditTime: 2021-07-24 10:08:07
  */
+import { App } from 'vue';
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import refComp from '@/compositions/ref.vue';
 import renativeComp from '@/compositions/reactive.vue';
 import computedComp from '@/compositions/computed.vue';
 import watchComp from '@/compositions/watch.vue';
-import LayoutComp from '../layout/index.vue';
+import LayoutComp from '../layouts/index.vue';
 import LoginComp from '../views/login';
 
 const routes: Array<RouteRecordRaw> = [
@@ -37,4 +38,10 @@ const routes: Array<RouteRecordRaw> = [
 export const router = createRouter({
   history: createWebHashHistory(),
   routes: routes,
+  strict: true,
+  scrollBehavior: () => ({ left: 0, top: 0 }),
 });
+
+export function setupRouter(app: App) {
+  app.use(router);
+}

@@ -1,24 +1,36 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-22 10:37:56
+ * @LastEditTime: 2021-07-24 10:16:06
  */
 import { createApp } from 'vue';
-import { router } from './router';
+import { setupRouter } from './router';
+import {
+  setupElementPlus,
+  setupGlobalProperties,
+} from '@utils/globalProperties';
+
 import App from './App.vue';
 // import App from './App';
-import { setGlobalProperties } from '@utils/setGlobalProperties';
 
 // global styles
 import 'normalize.css/normalize.css';
 import './styles/index.scss';
 import './styles/index.css';
 
-import useElement from './hooks/useElement';
+function bootstrap() {
+  const app = createApp(App);
 
-const app = createApp(App);
+  // configure routing
+  setupRouter(app);
 
-// 挂载全局属性
-setGlobalProperties(app);
+  // configure element-plus
+  setupElementPlus(app);
 
-app.use(useElement, { size: 'small' }).use(router).mount('#app');
+  // congiure global properties
+  setupGlobalProperties(app);
+
+  app.mount('#app');
+}
+
+void bootstrap();
