@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-24 10:26:39
+ * @LastEditTime: 2021-07-25 00:02:33
  */
 
 // global styles
@@ -10,7 +10,8 @@ import '@/styles/tailwind.css';
 import '@/styles/index.scss';
 
 import { createApp } from 'vue';
-import { setupRouter } from './router';
+import { setupRouter } from '@/router';
+import { setupStore } from '@/stores';
 import {
   setupElementPlus,
   setupGlobalProperties,
@@ -20,6 +21,9 @@ import App from './App.vue';
 
 function bootstrap() {
   const app = createApp(App);
+
+  // config store
+  setupStore(app);
 
   // configure routing
   setupRouter(app);

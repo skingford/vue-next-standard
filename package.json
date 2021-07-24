@@ -10,6 +10,7 @@
     "element-plus": "*",
     "json-bigint": "^1.0.0",
     "normalize.css": "^8.0.1",
+    "pinia": "^2.0.0-beta.5",
     "vue": "^3.1.5",
     "vue-router": "^4.0.10",
     "vuex": "^4.0.2"
