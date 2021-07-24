@@ -1,10 +1,10 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-24 10:41:56
- * @LastEditTime: 2021-07-24 22:25:39
+ * @LastEditTime: 2021-07-24 22:53:23
  */
 import { AppRouteModule, AppRouteRecordRaw } from '../types.d';
-import { PageEnum } from '../../enums/pageEnum';
+import { PageEnum } from '@/enums/pageEnum';
 import { PAGE_NOT_FOUND_ROUTE, REDIRECT_ROUTE } from './basic';
 
 const modules = import.meta.globEager('./modules/**/*.ts');

@@ -23,7 +23,7 @@
     "skipLibCheck": true,
     // add path
     "paths": {
-      "@": ["src"],
+      "@/*": ["src/*"],
       "@utils/*": ["src/utils/*"],
       "@hooks/*": ["src/hooks/*"]
     }
