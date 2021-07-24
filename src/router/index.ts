@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-27 11:14:16
- * @LastEditTime: 2021-07-24 10:08:07
+ * @LastEditTime: 2021-07-24 11:47:50
  */
 import { App } from 'vue';
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
@@ -10,7 +10,6 @@ import renativeComp from '@/compositions/reactive.vue';
 import computedComp from '@/compositions/computed.vue';
 import watchComp from '@/compositions/watch.vue';
 import LayoutComp from '../layouts/index.vue';
-import LoginComp from '../views/login';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -35,13 +34,13 @@ const routes: Array<RouteRecordRaw> = [
   { path: '/computed', component: computedComp },
 ];
 
-export const router = createRouter({
+const router = createRouter({
   history: createWebHashHistory(),
   routes: routes,
   strict: true,
   scrollBehavior: () => ({ left: 0, top: 0 }),
 });
 
-export function setupRouter(app: App) {
+export function setupRouter(app: App<Element>) {
   app.use(router);
 }

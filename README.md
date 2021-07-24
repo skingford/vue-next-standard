@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-16 08:50:08
- * @LastEditTime: 2021-07-24 10:21:02
+ * @LastEditTime: 2021-07-24 10:57:36
 -->
 
 # vue3-template
@@ -16,3 +16,7 @@
 
 - [element-plus](https://element-plus.gitee.io/#/zh-CN/component/button)
 - [tailwindcss](https://tailwindcss.com/docs/theme)
+
+## typescript
+
+- Recordable
