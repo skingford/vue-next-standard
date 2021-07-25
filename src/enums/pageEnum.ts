@@ -1,9 +1,4 @@
-/*
- * @Author: kingford
- * @Date: 2021-07-24 11:52:04
- * @LastEditTime: 2021-07-24 11:53:52
- */
-export const enum PageEnum {
+export enum PageEnum {
   // basic login path
   BASE_LOGIN = '/login',
   // basic home path

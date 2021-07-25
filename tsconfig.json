@@ -18,12 +18,13 @@
     "experimentalDecorators": true,
     "lib": ["esnext", "dom"],
     "types": ["vite/client"],
-    "typeRoots": ["./node_modules/@types/", "./types"],
+    "typeRoots": ["node_modules/@types/", "types"],
     "noImplicitAny": false,
     "skipLibCheck": true,
     // add path
     "paths": {
       "@/*": ["src/*"],
+      "@types/*": ["types/*"],
       "@utils/*": ["src/utils/*"],
       "@hooks/*": ["src/hooks/*"]
     }
