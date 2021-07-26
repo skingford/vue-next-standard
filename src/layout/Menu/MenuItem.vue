@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-26 11:50:00
- * @LastEditTime: 2021-07-26 19:12:38
+ * @LastEditTime: 2021-07-26 19:52:17
 -->
 <template>
   <div v-if="!item.hidden">
@@ -21,7 +21,6 @@
             :icon="onlyOneChild.meta.icon || (item.meta && item.meta.icon)"
             :title="onlyOneChild.meta.title"
           />
-          <!-- {{ onlyOneChild.meta.title }} -->
         </el-menu-item>
       </app-link>
     </template>
@@ -66,7 +65,6 @@ export default defineComponent({
   name: 'MenuItem',
   components: { LinkItem, AppLink },
   props: {
-    // route object
     item: {
       type: Object,
       required: true,
@@ -91,8 +89,11 @@ export default defineComponent({
       if (isExternal(props.basePath)) {
         return props.basePath;
       }
+
+      console.log('routePath:', routePath);
+      console.log('basePath:', props.basePath);
       // return path.resolve(props.basePath, routePath);
-      return routePath;
+      return `${props.basePath}/${routePath}`;
     };
 
     const hasOneShowingChild = (children: AppRouteRecordRaw[] = [], parent) => {

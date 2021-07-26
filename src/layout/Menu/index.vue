@@ -1,12 +1,12 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-23 16:15:42
- * @LastEditTime: 2021-07-26 18:02:00
+ * @LastEditTime: 2021-07-26 19:17:42
 -->
 <template>
   <div class="flex flex-col layout-menu">
     <div class="h-12 logo">
-      <img class="h-12" src="../assets/logo.png" />
+      <img class="h-12" src="@/assets/logo.png" />
     </div>
     <el-scrollbar class="flex-1">
       <el-menu
@@ -28,7 +28,7 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref, getCurrentInstance } from 'vue';
+import { defineComponent, ref } from 'vue';
 // import { useRouter } from 'vue-router';
 import MenuItem from './MenuItem.vue';
 import { routeModuleList } from '@/router/routes';
@@ -40,10 +40,6 @@ export default defineComponent({
   setup() {
     // 菜单展开关闭
     const isCollapse = ref(false);
-
-    console.log('getCurrentInstance :', getCurrentInstance());
-
-    // console.log('getRoutes:', ctx.$router.options.routes);
 
     const permission_routes = routeModuleList;
 
