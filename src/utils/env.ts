@@ -1,11 +1,11 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-25 11:39:33
- * @LastEditTime: 2021-07-25 11:39:53
+ * @LastEditTime: 2021-07-26 09:04:48
  */
-import type { GlobEnvConfig } from '@/config';
+import type { GlobEnvConfig } from '../../types/config.d';
 
-import { warn } from '/@/utils/log';
+import { warn } from '@/utils/log';
 import pkg from '../../package.json';
 import { getConfigFileName } from '../../build/getConfigFileName';
 

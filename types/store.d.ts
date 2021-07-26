@@ -1,6 +1,11 @@
-import { ErrorTypeEnum } from '/@/enums/exceptionEnum';
-import { MenuModeEnum, MenuTypeEnum } from '/@/enums/menuEnum';
-import { RoleInfo } from '/@/api/sys/model/userModel';
+/*
+ * @Author: kingford
+ * @Date: 2021-07-26 08:50:06
+ * @LastEditTime: 2021-07-26 09:40:53
+ */
+import { ErrorTypeEnum } from '@/enums/exceptionEnum';
+import { MenuModeEnum, MenuTypeEnum } from '@/enums/menuEnum';
+import { RoleInfo } from '@/api/system/model/userModel';
 
 // Lock screen information
 export interface LockInfo {

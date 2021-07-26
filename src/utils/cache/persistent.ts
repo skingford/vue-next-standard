@@ -1,7 +1,6 @@
 import type { LockInfo, UserInfo } from '../../../types/store.d';
 import type { ProjectConfig } from '../../../types/config.d';
 import type { RouteLocationNormalized } from 'vue-router';
-
 import { createLocalStorage, createSessionStorage } from '@/utils/cache';
 import { Memory } from './memory';
 import {

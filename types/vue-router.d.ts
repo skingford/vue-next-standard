@@ -1,10 +1,9 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-24 10:59:13
- * @LastEditTime: 2021-07-24 11:01:46
+ * @LastEditTime: 2021-07-26 09:41:45
  */
-export {};
-import { RoleEnum } from '../src/enums/roleEnum';
+import { RoleEnum } from '@/enums/roleEnum';
 
 declare module 'vue-router' {
   interface RouteMeta extends Record<string | number | symbol, unknown> {
@@ -45,3 +44,5 @@ declare module 'vue-router' {
     hidePathForChildren?: boolean;
   }
 }
+
+export {};

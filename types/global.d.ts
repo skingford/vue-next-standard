@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-24 11:03:37
- * @LastEditTime: 2021-07-24 11:34:56
+ * @LastEditTime: 2021-07-26 09:37:04
  */
 import type {
   VNodeChild,
@@ -90,4 +90,8 @@ declare module 'vue' {
     | FunctionalComponent<Props>;
 }
 
-export {};
+// declare module '*.vue' {
+//   import { DefineComponent } from 'vue'
+//   const component: DefineComponent<{}, {}, any>
+//   export default component
+// }
