@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-26 11:50:00
- * @LastEditTime: 2021-07-26 16:49:20
+ * @LastEditTime: 2021-07-26 19:12:38
 -->
 <template>
   <div v-if="!item.hidden">
@@ -12,18 +12,16 @@
         !item.alwaysShow
       "
     >
-      234234
-
       <app-link v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)">
         <el-menu-item
           :index="resolvePath(onlyOneChild.path)"
           :class="{ 'submenu-title-noDropdown': !isNest }"
         >
-          <item
+          <LinkItem
             :icon="onlyOneChild.meta.icon || (item.meta && item.meta.icon)"
             :title="onlyOneChild.meta.title"
           />
-          {{ onlyOneChild.meta.title }}
+          <!-- {{ onlyOneChild.meta.title }} -->
         </el-menu-item>
       </app-link>
     </template>
@@ -34,14 +32,14 @@
       :index="resolvePath(item.path)"
       popper-append-to-body
     >
-      <!-- <template slot="title">
-        <item
+      <template #title>
+        <LinkItem
           v-if="item.meta"
           :icon="item.meta && item.meta.icon"
           :title="item.meta.title"
         />
-      </template> -->23234
-      {{ item.meta.title }}
+      </template>
+
       <MenuItem
         v-for="child in item.children"
         :key="child.path"
@@ -54,19 +52,19 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, reactive } from 'vue';
+import { defineComponent, computed } from 'vue';
 import { isExternal } from '@/utils/validate';
 import { AppRouteRecordRaw } from '@/router/types';
-import Item from './Item';
+import LinkItem from './LinkItem';
 import AppLink from './Link.vue';
 
 interface IOnly extends AppRouteRecordRaw {
-  noShowingChildren: boolean;
+  noShowingChildren?: boolean;
 }
 
 export default defineComponent({
   name: 'MenuItem',
-  components: { Item, AppLink },
+  components: { LinkItem, AppLink },
   props: {
     // route object
     item: {
@@ -83,7 +81,8 @@ export default defineComponent({
     },
   },
   setup(props) {
-    let onlyOneChild: Partial<IOnly> = reactive({});
+    let route: Partial<IOnly> = {};
+    let onlyOneChild = computed(() => route);
 
     const resolvePath = (routePath) => {
       if (isExternal(routePath)) {
@@ -101,7 +100,7 @@ export default defineComponent({
         if (item.hidden) {
           return false;
         } else {
-          onlyOneChild = item;
+          route = item;
           return true;
         }
       });
@@ -111,16 +110,18 @@ export default defineComponent({
       }
 
       if (showingChildren.length === 0) {
-        onlyOneChild = { ...parent, path: '', noShowingChildren: true };
+        route = { ...parent, path: '', noShowingChildren: true };
         return true;
       }
-
-      console.log(onlyOneChild);
 
       return false;
     };
 
-    return { resolvePath, hasOneShowingChild, onlyOneChild };
+    return {
+      resolvePath,
+      hasOneShowingChild,
+      onlyOneChild,
+    };
   },
 });
 </script>

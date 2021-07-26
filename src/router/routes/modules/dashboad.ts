@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-16 00:36:38
- * @LastEditTime: 2021-07-24 11:55:12
+ * @LastEditTime: 2021-07-26 17:40:41
  */
 import type { AppRouteModule } from '../../types';
 import { LAYOUT } from '../../constant';
@@ -13,7 +13,7 @@ const dashboard: AppRouteModule = {
   redirect: '/dashboard/analysis',
   meta: {
     orderNo: 10,
-    icon: 'ion:grid-outline',
+    icon: 'el-icon-menu',
     title: 'Dashboard',
   },
   children: [
@@ -23,6 +23,7 @@ const dashboard: AppRouteModule = {
       component: () => import('@/views/dashboard/analysis/index.vue'),
       meta: {
         // affix: true,
+        icon: 'el-icon-menu',
         title: 'Analysis',
       },
     },
@@ -31,6 +32,7 @@ const dashboard: AppRouteModule = {
       name: 'Workbench',
       component: () => import('@/views/dashboard/workbench/index.vue'),
       meta: {
+        icon: 'el-icon-menu',
         title: 'Workbench',
       },
     },

@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-26 14:50:18
+ * @LastEditTime: 2021-07-26 17:39:51
  */
 
 // global styles
@@ -20,6 +20,7 @@ import {
 import { registerGlobalComponent } from '@/components';
 
 import App from './App.vue';
+// import '@/icons';
 
 function bootstrap() {
   const app = createApp(App);

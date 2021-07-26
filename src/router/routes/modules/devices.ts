@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-26 15:59:41
- * @LastEditTime: 2021-07-26 16:12:46
+ * @LastEditTime: 2021-07-26 17:41:13
  */
 import type { AppRouteModule } from '../../types';
 import { LAYOUT } from '../../constant';
@@ -13,7 +13,7 @@ const devices: AppRouteModule = {
   redirect: '/devices/analysis',
   meta: {
     orderNo: 10,
-    icon: 'ion:grid-outline',
+    icon: 'el-icon-menu',
     title: 'devices',
   },
   children: [

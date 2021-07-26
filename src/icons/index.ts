@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-26 14:36:06
- * @LastEditTime: 2021-07-26 14:46:26
+ * @LastEditTime: 2021-07-26 17:38:06
  */
 
 const modules = import.meta.globEager('./svg/**/*.svg');
@@ -10,6 +10,8 @@ const modules = import.meta.globEager('./svg/**/*.svg');
 //   const mod = modules[key].default;
 //   console.log(mod);
 // });
+
+console.log(modules);
 
 const requireAll = (requireContext) =>
   requireContext.keys().map(requireContext);

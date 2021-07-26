@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-24 10:42:38
- * @LastEditTime: 2021-07-26 10:34:42
+ * @LastEditTime: 2021-07-26 17:47:48
  */
 import type { AppRouteRecordRaw } from '../types';
 import {
@@ -16,6 +16,7 @@ export const PAGE_NOT_FOUND_ROUTE: AppRouteRecordRaw = {
   path: '/:path(.*)*',
   name: PAGE_NOT_FOUND_NAME,
   component: LAYOUT,
+  hidden: true,
   meta: {
     title: 'ErrorPage',
     hideBreadcrumb: true,
@@ -39,6 +40,7 @@ export const REDIRECT_ROUTE: AppRouteRecordRaw = {
   path: '/redirect',
   name: REDIRECT_NAME,
   component: LAYOUT,
+  hidden: true,
   meta: {
     title: REDIRECT_NAME,
     hideBreadcrumb: true,
@@ -62,6 +64,7 @@ export const ERROR_LOG_ROUTE: AppRouteRecordRaw = {
   name: 'ErrorLog',
   component: LAYOUT,
   redirect: '/error-log/list',
+  hidden: true,
   meta: {
     title: 'ErrorLog',
     hideBreadcrumb: true,

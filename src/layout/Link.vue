@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-26 16:16:21
- * @LastEditTime: 2021-07-26 16:16:34
+ * @LastEditTime: 2021-07-26 17:25:03
 -->
 <template>
   <component :is="type" v-bind="linkProps(to)">

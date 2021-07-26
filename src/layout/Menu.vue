@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-23 16:15:42
- * @LastEditTime: 2021-07-26 15:39:26
+ * @LastEditTime: 2021-07-26 18:02:00
 -->
 <template>
   <div class="flex flex-col layout-menu">
@@ -28,9 +28,10 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { defineComponent, ref, getCurrentInstance } from 'vue';
+// import { useRouter } from 'vue-router';
 import MenuItem from './MenuItem.vue';
+import { routeModuleList } from '@/router/routes';
 
 export default defineComponent({
   components: {
@@ -39,9 +40,12 @@ export default defineComponent({
   setup() {
     // 菜单展开关闭
     const isCollapse = ref(false);
-    const { currentRoute, getRoutes } = useRouter();
-    console.log(currentRoute.value, getRoutes());
-    const permission_routes = getRoutes();
+
+    console.log('getCurrentInstance :', getCurrentInstance());
+
+    // console.log('getRoutes:', ctx.$router.options.routes);
+
+    const permission_routes = routeModuleList;
 
     const handleOpen = (key: string | number, keyPath: string) => {
       console.log(key, keyPath);
