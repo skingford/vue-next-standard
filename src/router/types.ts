@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-24 10:49:32
- * @LastEditTime: 2021-07-26 10:34:09
+ * @LastEditTime: 2021-07-26 14:17:43
  */
 import type { RouteRecordRaw, RouteMeta } from 'vue-router';
 import { RoleEnum } from '@/enums/roleEnum';
@@ -21,6 +21,7 @@ export interface AppRouteRecordRaw extends Omit<RouteRecordRaw, 'meta'> {
   children?: AppRouteRecordRaw[];
   props?: Recordable;
   fullPath?: string;
+  hidden?: boolean;
 }
 
 export interface MenuTag {

@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-26 10:38:14
+ * @LastEditTime: 2021-07-26 14:50:18
  */
 
 // global styles
@@ -16,6 +16,8 @@ import {
   setupElementPlus,
   setupGlobalProperties,
 } from '@utils/globalProperties';
+
+import { registerGlobalComponent } from '@/components';
 
 import App from './App.vue';
 
@@ -33,6 +35,9 @@ function bootstrap() {
 
   // congiure global properties
   setupGlobalProperties(app);
+
+  // register global components
+  registerGlobalComponent(app);
 
   app.mount('#app');
 }

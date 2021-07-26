@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-16 08:50:08
- * @LastEditTime: 2021-07-26 09:50:12
+ * @LastEditTime: 2021-07-26 11:38:26
 -->
 
 # vue3-template
@@ -30,3 +30,5 @@ node node_modules/esbuild/install.js
 ```
 
 2.别名引入声明文件
+
+3.:deep 类型检测

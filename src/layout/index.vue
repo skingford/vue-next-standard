@@ -19,7 +19,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Footer from './Footer.vue';
-import Header from './Header.vue';
+import Header from './Navbar.vue';
 import Menu from './Menu.vue';
 
 export default defineComponent({

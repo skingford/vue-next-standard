@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite --mode dev",
     "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml"
   },
   "dependencies": {
     "axios": "^0.21.1",
