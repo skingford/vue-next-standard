@@ -4,7 +4,7 @@
  * @LastEditTime: 2021-07-25 00:08:34
  */
 import { defineStore } from 'pinia';
-import { store } from '@/stores';
+import { store } from '@/store';
 
 interface AppState {}
 

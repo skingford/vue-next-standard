@@ -1,4 +1,4 @@
-import { cacheCipher } from '@/settings/encryptionSetting';
+import { cacheCipher } from '@/setting/encryptionSetting';
 import type { EncryptionParams } from '@/utils/cipher';
 import { AesEncryption } from '@/utils/cipher';
 import { isNullOrUnDef } from '@/utils/is';

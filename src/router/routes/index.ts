@@ -3,7 +3,7 @@
  * @Date: 2021-07-24 10:41:56
  * @LastEditTime: 2021-07-24 22:53:23
  */
-import { AppRouteModule, AppRouteRecordRaw } from '../types.d';
+import { AppRouteModule, AppRouteRecordRaw } from '../types';
 import { PageEnum } from '@/enums/pageEnum';
 import { PAGE_NOT_FOUND_ROUTE, REDIRECT_ROUTE } from './basic';
 

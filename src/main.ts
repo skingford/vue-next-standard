@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-25 00:02:33
+ * @LastEditTime: 2021-07-26 10:38:14
  */
 
 // global styles
@@ -11,7 +11,7 @@ import '@/styles/index.scss';
 
 import { createApp } from 'vue';
 import { setupRouter } from '@/router';
-import { setupStore } from '@/stores';
+import { setupStore } from '@/store';
 import {
   setupElementPlus,
   setupGlobalProperties,

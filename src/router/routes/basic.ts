@@ -1,9 +1,9 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-24 10:42:38
- * @LastEditTime: 2021-07-24 22:30:45
+ * @LastEditTime: 2021-07-26 10:34:42
  */
-import type { AppRouteRecordRaw } from '../types.d';
+import type { AppRouteRecordRaw } from '../types';
 import {
   REDIRECT_NAME,
   LAYOUT,

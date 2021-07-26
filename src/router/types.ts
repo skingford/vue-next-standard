@@ -1,10 +1,10 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-24 10:49:32
- * @LastEditTime: 2021-07-24 10:54:32
+ * @LastEditTime: 2021-07-26 10:34:09
  */
 import type { RouteRecordRaw, RouteMeta } from 'vue-router';
-import { RoleEnum } from '../enums/roleEnum';
+import { RoleEnum } from '@/enums/roleEnum';
 import { defineComponent } from 'vue';
 
 export type Component<T extends any = any> =

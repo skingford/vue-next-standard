@@ -3,7 +3,7 @@
  * @Date: 2021-07-16 00:36:38
  * @LastEditTime: 2021-07-24 11:55:12
  */
-import type { AppRouteModule } from '../../types.d';
+import type { AppRouteModule } from '../../types';
 import { LAYOUT } from '../../constant';
 
 const dashboard: AppRouteModule = {

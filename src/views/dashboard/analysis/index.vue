@@ -8,7 +8,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { useUserStoreWithOut } from '@/stores/modules/user';
+import { useUserStoreWithOut } from '@/store/modules/user';
 
 export default defineComponent({
   setup() {
