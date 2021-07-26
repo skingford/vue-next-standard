@@ -1,10 +1,10 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-16 00:36:38
- * @LastEditTime: 2021-07-26 17:40:41
+ * @LastEditTime: 2021-07-26 20:34:05
  */
 import type { AppRouteModule } from '../../types';
-import { LAYOUT } from '../../constant';
+import { LAYOUT } from '@/router/constant';
 
 const dashboard: AppRouteModule = {
   path: '/dashboard',

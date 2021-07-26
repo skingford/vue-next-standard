@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-23 16:15:42
- * @LastEditTime: 2021-07-26 19:17:42
+ * @LastEditTime: 2021-07-26 20:01:08
 -->
 <template>
   <div class="flex flex-col layout-menu">
@@ -31,7 +31,7 @@
 import { defineComponent, ref } from 'vue';
 // import { useRouter } from 'vue-router';
 import MenuItem from './MenuItem.vue';
-import { routeModuleList } from '@/router/routes';
+import { asyncRoutes } from '@/router/routes';
 
 export default defineComponent({
   components: {
@@ -41,7 +41,7 @@ export default defineComponent({
     // 菜单展开关闭
     const isCollapse = ref(false);
 
-    const permission_routes = routeModuleList;
+    const permission_routes = asyncRoutes;
 
     const handleOpen = (key: string | number, keyPath: string) => {
       console.log(key, keyPath);

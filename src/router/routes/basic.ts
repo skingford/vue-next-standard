@@ -1,15 +1,15 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-24 10:42:38
- * @LastEditTime: 2021-07-26 19:54:34
+ * @LastEditTime: 2021-07-26 20:08:33
  */
-import type { AppRouteRecordRaw } from '../types';
+import type { AppRouteRecordRaw } from '@/router/types';
 import {
   REDIRECT_NAME,
   LAYOUT,
   EXCEPTION_COMPONENT,
   PAGE_NOT_FOUND_NAME,
-} from '../constant';
+} from '@/router/constant';
 
 // 404 on a page
 export const PAGE_NOT_FOUND_ROUTE: AppRouteRecordRaw = {

@@ -1,10 +1,10 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-26 15:59:41
- * @LastEditTime: 2021-07-26 17:41:13
+ * @LastEditTime: 2021-07-26 20:33:23
  */
-import type { AppRouteModule } from '../../types';
-import { LAYOUT } from '../../constant';
+import type { AppRouteModule } from '@/router/types';
+import { LAYOUT } from '@/router/constant';
 
 const devices: AppRouteModule = {
   path: '/devices',
@@ -19,7 +19,7 @@ const devices: AppRouteModule = {
   children: [
     {
       path: 'analysis',
-      name: 'Analysis',
+      name: 'DevicesAnalysis',
       component: () => import('@/views/devices/analysis/index.vue'),
       meta: {
         // affix: true,
@@ -28,7 +28,7 @@ const devices: AppRouteModule = {
     },
     {
       path: 'workbench',
-      name: 'Workbench',
+      name: 'DevicesWorkbench',
       component: () => import('@/views/devices/workbench/index.vue'),
       meta: {
         title: 'Workbench',

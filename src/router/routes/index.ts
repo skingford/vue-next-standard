@@ -1,23 +1,22 @@
+import { router } from './../index';
 /*
  * @Author: kingford
  * @Date: 2021-07-24 10:41:56
- * @LastEditTime: 2021-07-26 19:55:45
+ * @LastEditTime: 2021-07-26 20:55:37
  */
-import { AppRouteModule, AppRouteRecordRaw } from '../types';
 import { PageEnum } from '@/enums/pageEnum';
-import { PAGE_NOT_FOUND_ROUTE, REDIRECT_ROUTE } from './basic';
+import { AppRouteModule, AppRouteRecordRaw } from '@/router/types';
+import { PAGE_NOT_FOUND_ROUTE, REDIRECT_ROUTE } from '@/router/routes/basic';
 
 const modules = import.meta.globEager('./modules/**/*.ts');
 
-export const routeModuleList: AppRouteModule[] = [];
+const routeModuleList: AppRouteModule[] = [];
 
 Object.keys(modules).forEach((key) => {
   const mod = modules[key].default || {};
   const modList = Array.isArray(mod) ? [...mod] : [mod];
   routeModuleList.push(...modList);
 });
-
-console.log(routeModuleList);
 
 export const asyncRoutes = [...routeModuleList];
 
@@ -39,10 +38,12 @@ export const LoginRoute = {
   },
 };
 
+console.log('asyncRoutes:', asyncRoutes);
+
 export const basicRoutes = [
   RootRoute,
   LoginRoute,
-  ...routeModuleList,
+  ...asyncRoutes,
   REDIRECT_ROUTE,
   PAGE_NOT_FOUND_ROUTE,
 ];

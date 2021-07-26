@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-26 16:16:21
- * @LastEditTime: 2021-07-26 19:49:12
+ * @LastEditTime: 2021-07-26 20:13:49
 -->
 <template>
   <component :is="type" v-bind="linkProps(to)">
@@ -21,19 +21,17 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const externalComputed = computed(() => external(props.to));
-    const isExternal = externalComputed.value;
+    const isExternal = computed(() => external(props.to));
 
-    const typeComputed = computed(() => {
-      if (isExternal) {
+    const type = computed(() => {
+      if (isExternal.value) {
         return 'a';
       }
       return 'router-link';
     });
-    const type = typeComputed.value;
 
     const linkProps = (to: string) => {
-      if (isExternal) {
+      if (isExternal.value) {
         return {
           href: to,
           target: '_blank',
