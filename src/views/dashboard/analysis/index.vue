@@ -1,10 +1,14 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-24 11:45:25
- * @LastEditTime: 2021-07-25 00:32:49
+ * @LastEditTime: 2021-07-27 21:07:00
 -->
 <template>
-  <div>analysis {{ user.name }}---{{ user.fullName }}</div>
+  <div>
+    analysis {{ user.name }}---{{ user.fullName }}
+
+    <svg-icon name="404"></svg-icon>
+  </div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';

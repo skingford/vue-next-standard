@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-26 15:59:41
- * @LastEditTime: 2021-07-27 20:55:03
+ * @LastEditTime: 2021-07-27 21:05:36
  */
 import type { AppRouteModule } from '@/router/types';
 import { LAYOUT } from '@/router/constant';
@@ -21,6 +21,7 @@ const compositions: AppRouteModule = {
       name: 'Ref',
       component: () => import('@/compositions/ref.vue'),
       meta: {
+        icon: 'bug',
         title: 'ref',
       },
     },
