@@ -1,3 +1,8 @@
+/*
+ * @Author: kingford
+ * @Date: 2021-07-26 08:50:06
+ * @LastEditTime: 2021-07-27 20:11:05
+ */
 export interface Cache<V = any> {
   value?: V;
   timeoutId?: ReturnType<typeof setTimeout>;
@@ -23,15 +28,6 @@ export class Memory<T = any, V = any> {
   setCache(cache) {
     this.cache = cache;
   }
-
-  // get<K extends keyof T>(key: K) {
-  //   const item = this.getItem(key);
-  //   const time = item?.time;
-  //   if (!isNullOrUnDef(time) && time < new Date().getTime()) {
-  //     this.remove(key);
-  //   }
-  //   return item?.value ?? undefined;
-  // }
 
   get<K extends keyof T>(key: K) {
     return this.cache[key];
