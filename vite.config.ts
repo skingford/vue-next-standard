@@ -1,13 +1,14 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-26 10:29:22
+ * @LastEditTime: 2021-07-27 20:29:48
  */
 import path from 'path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import styleImport from 'vite-plugin-style-import';
+import { createSvg } from './src/icons';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -31,6 +32,7 @@ export default defineConfig({
 
   plugins: [
     vue(),
+    createSvg('./src/icons/svg/'),
     // 配置vue-jsx插件
     vueJsx({}),
     // 动态引入组件库

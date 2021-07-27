@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-26 16:16:21
- * @LastEditTime: 2021-07-27 19:22:23
+ * @LastEditTime: 2021-07-27 20:30:21
 -->
 <template>
   <component :is="type" v-bind="linkProps(to)">
@@ -21,7 +21,6 @@ export default defineComponent({
     },
   },
   setup(props) {
-    console.log('to:', props.to);
     const isExternal = computed(() => external(props.to));
 
     const type = computed(() => {
