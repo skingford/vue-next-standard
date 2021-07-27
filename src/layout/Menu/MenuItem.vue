@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-26 11:50:00
- * @LastEditTime: 2021-07-26 21:02:38
+ * @LastEditTime: 2021-07-27 19:27:34
 -->
 <template>
   <div v-if="!item.hidden">
@@ -90,7 +90,10 @@ export default defineComponent({
         return props.basePath;
       }
 
-      return routePath;
+      console.log('basePath:routePath:', props.basePath, routePath);
+      console.log('useResolvePath:', useResolvePath(props.basePath, routePath));
+
+      return useResolvePath(props.basePath, routePath);
     };
 
     const useResolvePath = (basePath: string, routePath: string) => {
@@ -98,9 +101,11 @@ export default defineComponent({
         return routePath;
       }
 
-      console.log('basePath:routePath', basePath, routePath);
-      return basePath + '/' + routePath;
-      //return `${basePath}/${routePath}`;
+      if (!routePath) {
+        return `${basePath}`;
+      }
+
+      return `${basePath}/${routePath}`;
     };
 
     const hasOneShowingChild = (children: AppRouteRecordRaw[] = [], parent) => {

@@ -2,7 +2,7 @@ import { router } from './../index';
 /*
  * @Author: kingford
  * @Date: 2021-07-24 10:41:56
- * @LastEditTime: 2021-07-26 20:55:37
+ * @LastEditTime: 2021-07-27 19:25:46
  */
 import { PageEnum } from '@/enums/pageEnum';
 import { AppRouteModule, AppRouteRecordRaw } from '@/router/types';
@@ -17,8 +17,6 @@ Object.keys(modules).forEach((key) => {
   const modList = Array.isArray(mod) ? [...mod] : [mod];
   routeModuleList.push(...modList);
 });
-
-export const asyncRoutes = [...routeModuleList];
 
 export const RootRoute: AppRouteRecordRaw = {
   path: '/',
@@ -37,6 +35,8 @@ export const LoginRoute = {
     title: '登录',
   },
 };
+
+export const asyncRoutes = [...routeModuleList, LoginRoute];
 
 console.log('asyncRoutes:', asyncRoutes);
 

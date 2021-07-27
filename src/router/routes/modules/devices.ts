@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-26 15:59:41
- * @LastEditTime: 2021-07-26 20:33:23
+ * @LastEditTime: 2021-07-27 19:31:15
  */
 import type { AppRouteModule } from '@/router/types';
 import { LAYOUT } from '@/router/constant';
@@ -14,12 +14,12 @@ const devices: AppRouteModule = {
   meta: {
     orderNo: 10,
     icon: 'el-icon-menu',
-    title: 'devices',
+    title: '设备',
   },
   children: [
     {
       path: 'analysis',
-      name: 'DevicesAnalysis',
+      name: '设备分析',
       component: () => import('@/views/devices/analysis/index.vue'),
       meta: {
         // affix: true,
@@ -28,7 +28,7 @@ const devices: AppRouteModule = {
     },
     {
       path: 'workbench',
-      name: 'DevicesWorkbench',
+      name: '设备面板',
       component: () => import('@/views/devices/workbench/index.vue'),
       meta: {
         title: 'Workbench',
