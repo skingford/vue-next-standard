@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-26 15:59:41
- * @LastEditTime: 2021-07-27 19:31:15
+ * @LastEditTime: 2021-07-27 20:45:50
  */
 import type { AppRouteModule } from '@/router/types';
 import { LAYOUT } from '@/router/constant';
@@ -22,7 +22,7 @@ const devices: AppRouteModule = {
       name: '设备分析',
       component: () => import('@/views/devices/analysis/index.vue'),
       meta: {
-        // affix: true,
+        icon: '404',
         title: 'Analysis',
       },
     },

@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-24 10:49:32
- * @LastEditTime: 2021-07-27 19:53:27
+ * @LastEditTime: 2021-07-27 20:45:36
  */
 import type { RouteRecordRaw, RouteMeta } from 'vue-router';
 import { RoleEnum } from '@/enums/roleEnum';
@@ -13,7 +13,7 @@ export type Component<T extends any = any> =
   | (() => Promise<T>);
 
 interface IRouteMeta extends RouteMeta {
-  roles: RoleEnum[];
+  roles?: RoleEnum[];
 }
 
 // @ts-ignore
