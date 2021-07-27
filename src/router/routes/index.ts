@@ -2,7 +2,7 @@ import { router } from './../index';
 /*
  * @Author: kingford
  * @Date: 2021-07-24 10:41:56
- * @LastEditTime: 2021-07-27 19:25:46
+ * @LastEditTime: 2021-07-27 19:33:52
  */
 import { PageEnum } from '@/enums/pageEnum';
 import { AppRouteModule, AppRouteRecordRaw } from '@/router/types';
@@ -36,9 +36,7 @@ export const LoginRoute = {
   },
 };
 
-export const asyncRoutes = [...routeModuleList, LoginRoute];
-
-console.log('asyncRoutes:', asyncRoutes);
+export const asyncRoutes = [...routeModuleList];
 
 export const basicRoutes = [
   RootRoute,
