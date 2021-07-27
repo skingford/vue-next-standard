@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-27 11:14:16
- * @LastEditTime: 2021-07-26 20:31:48
+ * @LastEditTime: 2021-07-27 19:47:41
  */
 import { App } from 'vue';
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
@@ -10,8 +10,6 @@ import { REDIRECT_NAME } from './constant';
 import { basicRoutes, LoginRoute } from './routes';
 
 const WHITE_NAME_LIST = [LoginRoute.name, REDIRECT_NAME];
-
-console.log('basicRoutes:', basicRoutes);
 
 export const router = createRouter({
   history: createWebHashHistory(),
