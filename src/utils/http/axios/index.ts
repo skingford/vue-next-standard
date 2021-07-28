@@ -38,8 +38,8 @@ const transform: AxiosTransform = {
     if (!isTransformResponse) {
       return res.data;
     }
-    // 错误的时候返回
 
+    // 错误的时候返回
     const { data } = res;
     if (!data) {
       // return '[HTTP] Request has no return value';
@@ -60,7 +60,7 @@ const transform: AxiosTransform = {
     let timeoutMsg = '';
     switch (code) {
       case ResultEnum.TIMEOUT:
-        timeoutMsg = t('sys.api.timeoutMessage');
+        console.log('timeoutMessage');
         break;
       default:
         if (message) {

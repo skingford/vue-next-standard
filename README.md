@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-16 08:50:08
- * @LastEditTime: 2021-07-27 20:43:05
+ * @LastEditTime: 2021-07-28 09:20:57
 -->
 
 # vue3-template
@@ -21,6 +21,15 @@
 
 - Recordable
 
+## 缓存
+
+- Persistent
+- storageCache
+
+## 注意
+
+1.定义全局组件，name 为必需
+
 ## 问题归档
 
 1.Error: esbuild: Failed to install correctly
@@ -32,7 +41,3 @@ node node_modules/esbuild/install.js
 2.别名引入声明文件
 
 3.:deep 类型检测
-
-## 注意
-
-1.定义全局组件，name 为必需
