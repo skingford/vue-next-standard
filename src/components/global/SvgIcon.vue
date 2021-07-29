@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-29 11:05:14
- * @LastEditTime: 2021-07-29 12:02:45
+ * @LastEditTime: 2021-07-29 14:48:16
 -->
 <template>
   <svg
@@ -9,7 +9,7 @@
     :style="getStyle"
     aria-hidden="true"
   >
-    <use :xlink:href="symbolId" />
+    <use :xlink:href="symbolId" :fill="color" />
   </svg>
 </template>
 <script lang="ts">
@@ -35,7 +35,6 @@ export default defineComponent({
       type: String,
       default: '#333',
     },
-
     spin: {
       type: Boolean,
       default: false,

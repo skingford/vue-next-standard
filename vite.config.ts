@@ -1,15 +1,17 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-29 11:12:37
+ * @LastEditTime: 2021-07-29 14:20:22
  */
-import path from 'path';
+import { resolve } from 'path';
 import type { UserConfig, ConfigEnv } from 'vite';
 import { loadEnv } from 'vite';
 import dayjs from 'dayjs';
 
 import { wrapperEnv } from './build/utils';
 import { createVitePlugins } from './build/vite/plugin';
+import { OUTPUT_DIR } from './build/constant';
+import { createProxy } from './build/vite/proxy';
 import pkg from './package.json';
 
 const { dependencies, devDependencies, name, version } = pkg;
@@ -18,21 +20,28 @@ const __APP_INFO__ = {
   lastBuildTime: dayjs().format('YYYY-MM-DD HH:mm:ss'),
 };
 
+function pathResolve(dir: string) {
+  return resolve(process.cwd(), '.', dir);
+}
+
 // https://vitejs.dev/config/
 export default ({ command, mode }: ConfigEnv): UserConfig => {
   const root = process.cwd();
   const env = loadEnv(mode, root);
   const viteEnv = wrapperEnv(env);
   const isBuild = command === 'build';
+  const { VITE_PORT, VITE_PUBLIC_PATH, VITE_PROXY, VITE_DROP_CONSOLE } =
+    viteEnv;
 
   return {
-    base: mode === 'development' ? '/' : './',
+    base: VITE_PUBLIC_PATH,
+    root,
     resolve: {
       alias: {
         vue: 'vue/dist/vue.esm-bundler.js',
-        '@': path.resolve(__dirname, 'src'),
-        '@types': path.resolve(__dirname, 'types'),
-        '@utils': path.resolve(__dirname, 'src/utils'),
+        '@': pathResolve('src'),
+        '@types': pathResolve('types'),
+        '@utils': pathResolve('src/utils'),
       },
     },
 
@@ -40,6 +49,19 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     define: {
       __INTLIFY_PROD_DEVTOOLS__: false,
       __APP_INFO__: JSON.stringify(__APP_INFO__),
+    },
+
+    build: {
+      target: 'es2015',
+      outDir: OUTPUT_DIR,
+      terserOptions: {
+        compress: {
+          keep_infinity: true,
+          drop_console: VITE_DROP_CONSOLE,
+        },
+      },
+      brotliSize: false,
+      chunkSizeWarningLimit: 2000,
     },
 
     // 全局css
@@ -53,34 +75,12 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     },
 
     plugins: createVitePlugins(viteEnv, isBuild),
-    // plugins: [
-    //   vue(),
-    //   // 配置vue-jsx插件
-    //   vueJsx({}),
-    //   // 动态引入组件库
-    //   styleImport({
-    //     libs: [
-    //       {
-    //         libraryName: 'element-plus',
-    //         esModule: true,
-    //         ensureStyleFile: true,
-    //         resolveStyle: (name) => {
-    //           name = name.slice(3);
-    //           return `element-plus/packages/theme-chalk/src/${name}.scss`;
-    //         },
-    //         resolveComponent: (name) => {
-    //           return `element-plus/lib/${name}`;
-    //         },
-    //       },
-    //     ],
-    //   }),
-    // ],
 
     server: {
-      host: '0.0.0.0', //'192.168.10.209'
-      port: 4001,
+      host: true, //'0.0.0.0'
+      port: VITE_PORT,
       open: true,
-      proxy: {},
+      proxy: createProxy(VITE_PROXY),
     },
   };
 };
