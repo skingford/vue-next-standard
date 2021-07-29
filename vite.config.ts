@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-27 20:29:48
+ * @LastEditTime: 2021-07-29 09:26:56
  */
 import path from 'path';
 import { defineConfig } from 'vite';
@@ -11,7 +11,9 @@ import styleImport from 'vite-plugin-style-import';
 import { createSvg } from './src/icons';
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
+  base: mode === 'development' ? '/' : './',
+
   resolve: {
     alias: {
       vue: 'vue/dist/vue.esm-bundler.js',
@@ -58,4 +60,4 @@ export default defineConfig({
     port: 4001,
     proxy: {},
   },
-});
+}));

@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-26 14:36:06
- * @LastEditTime: 2021-07-27 20:28:35
+ * @LastEditTime: 2021-07-29 09:23:25
  */
 
 import { readFileSync, readdirSync } from 'fs';
@@ -16,9 +16,6 @@ const clearReturn = /(\r)|(\n)/g;
 function svgFind(e) {
   const arr: any[] = [];
   const dirents = readdirSync(e, { withFileTypes: true });
-
-  console.log('dirents:', dirents);
-  debugger;
 
   for (const dirent of dirents) {
     if (dirent.isDirectory()) arr.push(...svgFind(e + dirent.name + '/'));
