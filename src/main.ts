@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-29 11:59:30
+ * @LastEditTime: 2021-07-29 12:41:35
  */
 
 // global styles
@@ -24,7 +24,7 @@ import { registerGlobalComponent } from '@/components';
 
 import App from './App.vue';
 
-function bootstrap() {
+async function bootstrap() {
   const app = createApp(App);
 
   // config store
@@ -43,6 +43,8 @@ function bootstrap() {
 
   // register global components
   registerGlobalComponent(app);
+
+  await router.isReady();
 
   app.mount('#app');
 }
