@@ -1,3 +1,8 @@
+/*
+ * @Author: kingford
+ * @Date: 2021-07-30 01:09:00
+ * @LastEditTime: 2021-07-30 01:18:30
+ */
 // Image resource files used to compress the output of the production environment
 // https://github.com/anncwb/vite-plugin-imagemin
 

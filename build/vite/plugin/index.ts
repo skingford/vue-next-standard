@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-29 10:44:50
- * @LastEditTime: 2021-07-29 17:56:44
+ * @LastEditTime: 2021-07-30 01:51:13
  */
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
@@ -12,16 +12,16 @@ import { configHmrPlugin } from './hmr';
 import { configSvgIconsPlugin } from './svgSprite';
 import { configStyleImportPlugin } from './styleImport';
 import { configHtmlPlugin } from './html';
-// import { configImageminPlugin } from './imagemin';
-// import { configCompressPlugin } from './compress';
-// import { configPwaConfig } from './pwa';
+import { configImageminPlugin } from './imagemin';
+import { configCompressPlugin } from './compress';
+import { configPwaConfig } from './pwa';
 
 export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   const {
     VITE_LEGACY,
-    // VITE_USE_IMAGEMIN,
-    // VITE_BUILD_COMPRESS,
-    // VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE,
+    VITE_USE_IMAGEMIN,
+    VITE_BUILD_COMPRESS,
+    VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE,
   } = viteEnv;
   const vitePlugins = [vue(), vueJsx()];
 
@@ -40,21 +40,21 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   vitePlugins.push(configStyleImportPlugin());
 
   // The following plugins only work in the production environment
-  // if (isBuild) {
-  //   //vite-plugin-imagemin
-  //   VITE_USE_IMAGEMIN && vitePlugins.push(configImageminPlugin());
+  if (isBuild) {
+    //vite-plugin-imagemin
+    VITE_USE_IMAGEMIN && vitePlugins.push(configImageminPlugin());
 
-  //   // rollup-plugin-gzip
-  //   vitePlugins.push(
-  //     configCompressPlugin(
-  //       VITE_BUILD_COMPRESS,
-  //       VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE
-  //     ) as any
-  //   );
+    // rollup-plugin-gzip
+    vitePlugins.push(
+      configCompressPlugin(
+        VITE_BUILD_COMPRESS,
+        VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE
+      ) as any
+    );
 
-  //   // vite-plugin-pwa
-  //   vitePlugins.push(configPwaConfig(viteEnv));
-  // }
+    // vite-plugin-pwa
+    vitePlugins.push(configPwaConfig(viteEnv) as any);
+  }
 
   return vitePlugins;
 }
