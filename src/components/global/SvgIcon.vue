@@ -1,45 +1,64 @@
 <!--
  * @Author: kingford
- * @Date: 2021-07-26 14:20:08
- * @LastEditTime: 2021-07-27 20:41:38
+ * @Date: 2021-07-29 11:05:14
+ * @LastEditTime: 2021-07-29 12:02:45
 -->
 <template>
-  <svg :class="svgClass" v-bind="$attrs" :style="{ color: color }">
-    <use :xlink:href="iconName"></use>
+  <svg
+    :class="[$attrs.class, spin && 'svg-icon-spin']"
+    :style="getStyle"
+    aria-hidden="true"
+  >
+    <use :xlink:href="symbolId" />
   </svg>
 </template>
-
 <script lang="ts">
-import { computed, defineComponent } from 'vue';
+import type { CSSProperties } from 'vue';
+import { defineComponent, computed } from 'vue';
 
 export default defineComponent({
   name: 'SvgIcon',
   props: {
+    prefix: {
+      type: String,
+      default: 'icon',
+    },
     name: {
       type: String,
       required: true,
     },
+    size: {
+      type: [Number, String],
+      default: 16,
+    },
     color: {
       type: String,
-      default: '',
+      default: '#333',
+    },
+
+    spin: {
+      type: Boolean,
+      default: false,
     },
   },
   setup(props) {
-    const iconName = computed(() => `#icon-${props.name}`);
-    const svgClass = computed(() => {
-      if (props.name) return `svg-icon icon-${props.name}`;
-      return 'svg-icon';
+    const symbolId = computed(() => `#${props.prefix}-${props.name}`);
+
+    const getStyle = computed((): CSSProperties => {
+      const { size } = props;
+      let s = `${size}`;
+      s = `${s.replace('px', '')}px`;
+      return {
+        width: s,
+        height: s,
+      };
     });
-    return { iconName, svgClass };
+    return { symbolId, getStyle };
   },
 });
 </script>
-
-<style scoped>
-.svg-icon {
-  width: 1em;
-  height: 1em;
-  fill: currentColor;
-  vertical-align: middle;
+<style lang="scss" scoped>
+.svg-icon-spin {
+  animation: loadingCircle 1s infinite linear;
 }
 </style>

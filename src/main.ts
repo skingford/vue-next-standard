@@ -1,13 +1,16 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-28 08:40:50
+ * @LastEditTime: 2021-07-29 11:59:30
  */
 
 // global styles
 import 'normalize.css/normalize.css';
 import '@/styles/tailwind.css';
 import '@/styles/index.scss';
+
+// Register icon sprite
+import 'virtual:svg-icons-register';
 
 import { createApp } from 'vue';
 import { setupRouter, router } from '@/router';
@@ -17,7 +20,6 @@ import {
   setupElementPlus,
   setupGlobalProperties,
 } from '@utils/globalProperties';
-
 import { registerGlobalComponent } from '@/components';
 
 import App from './App.vue';

@@ -1,10 +1,9 @@
-import type { Plugin } from 'vite';
-
-/**
- * TODO
- * Temporarily solve the Vite circular dependency problem, and wait for a better solution to fix it later. I don't know what problems this writing will bring.
- * @returns
+/*
+ * @Author: kingford
+ * @Date: 2021-07-26 09:02:46
+ * @LastEditTime: 2021-07-29 10:50:13
  */
+import type { Plugin } from 'vite';
 
 export function configHmrPlugin(): Plugin {
   return {
@@ -13,7 +12,7 @@ export function configHmrPlugin(): Plugin {
       if (file.match(/xml$/)) return [];
 
       modules.forEach((m) => {
-        if (!m.url.match(/\.(css|less)/)) {
+        if (!m.url.match(/\.(css|scss)/)) {
           m.importedModules = new Set();
           m.importers = new Set();
         }
