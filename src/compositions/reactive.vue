@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-06-27 11:18:12
- * @LastEditTime: 2021-06-27 20:41:05
+ * @LastEditTime: 2021-07-29 15:12:23
 -->
 <template>
   <h3>姓名:{{ user.name }}</h3>

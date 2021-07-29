@@ -1,7 +1,3 @@
-*.js
-*.png
-*.ttf
-
 .env
 .env.development
 .env.production

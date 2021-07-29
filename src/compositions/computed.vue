@@ -3,11 +3,6 @@
  * @Date: 2021-06-27 20:46:13
  * @LastEditTime: 2021-06-27 21:22:24
 -->
-<!--
- * @Author: kingford
- * @Date: 2021-06-27 11:18:12
- * @LastEditTime: 2021-06-27 18:33:14
--->
 <template>
   <div>{{ user.firstName }}-{{ user.lastName }}</div>
   <p>{{ fullName1 }}</p>
