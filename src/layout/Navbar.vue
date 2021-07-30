@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-16 08:50:08
- * @LastEditTime: 2021-07-26 14:10:02
+ * @LastEditTime: 2021-07-30 17:39:17
 -->
 
 <template>
@@ -46,12 +46,15 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
+import { useAppStoreWithOut } from '@/store/modules/app';
 
 export default defineComponent({
   setup() {
     const isOpen = ref(false);
+    const store = useAppStoreWithOut();
     const toggle = () => {
       isOpen.value = !isOpen.value;
+      store.setProjectConfig({ menuSetting: { isCollapse: isOpen.value } });
     };
 
     return {

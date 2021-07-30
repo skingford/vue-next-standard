@@ -10,3 +10,18 @@ body {
   padding: 20px;
   font-family: 'PingFangSC';
 }
+
+.is-mobile {
+  .layout-menu {
+    width: unset !important;
+  }
+  .el-submenu {
+    .el-icon-arrow-right,
+    .link-item-title {
+      display: none;
+    }
+    .link-item {
+      display: block;
+    }
+  }
+}

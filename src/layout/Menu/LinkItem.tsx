@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-26 15:03:10
- * @LastEditTime: 2021-07-27 20:48:08
+ * @LastEditTime: 2021-07-30 17:59:26
  */
 import { defineComponent } from 'vue';
 import './index.scss';
@@ -31,9 +31,9 @@ export default defineComponent({
     const { icon, title } = props;
 
     return () => (
-      <div class="flex items-center">
+      <div class="flex items-center link-item">
         {renderIcon(icon)}
-        <span>{title} </span>
+        <span class="link-item-title">{title} </span>
       </div>
     );
   },
