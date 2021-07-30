@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-16 08:50:08
- * @LastEditTime: 2021-07-28 09:20:57
+ * @LastEditTime: 2021-07-30 10:02:07
 -->
 
 # vue3-template
@@ -28,7 +28,8 @@
 
 ## 注意
 
-1.定义全局组件，name 为必需
+1. 推荐使用 yarn 安装
+2. 定义全局组件，name 为必需
 
 ## 问题归档
 

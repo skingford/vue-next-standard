@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-29 14:20:22
+ * @LastEditTime: 2021-07-30 09:41:19
  */
 import { resolve } from 'path';
 import type { UserConfig, ConfigEnv } from 'vite';
@@ -38,7 +38,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     root,
     resolve: {
       alias: {
-        vue: 'vue/dist/vue.esm-bundler.js',
         '@': pathResolve('src'),
         '@types': pathResolve('types'),
         '@utils': pathResolve('src/utils'),
