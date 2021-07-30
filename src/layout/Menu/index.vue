@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-23 16:15:42
- * @LastEditTime: 2021-07-26 20:01:08
+ * @LastEditTime: 2021-07-30 16:04:02
 -->
 <template>
   <div class="flex flex-col layout-menu">
@@ -10,11 +10,16 @@
     </div>
     <el-scrollbar class="flex-1">
       <el-menu
-        default-active="1-4-1"
-        class="el-menu-vertical-demo"
+        :default-active="activeMenu"
+        background-color="#304156"
+        text-color="#bfcbd9"
+        active-text-color="#f4f4f5"
+        :collapse="isCollapse"
+        :unique-opened="false"
+        :collapse-transition="false"
         @open="handleOpen"
         @close="handleClose"
-        :collapse="isCollapse"
+        mode="vertical"
       >
         <MenuItem
           v-for="route in permission_routes"
@@ -28,8 +33,8 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-// import { useRouter } from 'vue-router';
+import { defineComponent, ref, computed } from 'vue';
+import { useRoute } from 'vue-router';
 import MenuItem from './MenuItem.vue';
 import { asyncRoutes } from '@/router/routes';
 
@@ -39,7 +44,16 @@ export default defineComponent({
   },
   setup() {
     // 菜单展开关闭
+
     const isCollapse = ref(false);
+
+    const activeMenu = computed(() => {
+      const { meta, path } = useRoute();
+      if (meta.activeMenu) {
+        return meta.activeMenu;
+      }
+      return path;
+    });
 
     const permission_routes = asyncRoutes;
 
@@ -55,6 +69,7 @@ export default defineComponent({
       isCollapse,
       handleOpen,
       handleClose,
+      activeMenu,
       permission_routes,
     };
   },
@@ -71,6 +86,9 @@ export default defineComponent({
     .el-scrollbar__view,
     .el-menu {
       height: 100%;
+    }
+    .el-menu {
+      border-right-color: $el-menu-border-color;
     }
   }
 }

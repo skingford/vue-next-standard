@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-26 11:50:00
- * @LastEditTime: 2021-07-27 20:27:59
+ * @LastEditTime: 2021-07-30 15:38:23
 -->
 <template>
   <div v-if="!item.hidden">
@@ -38,7 +38,6 @@
           :title="item.meta.title"
         />
       </template>
-
       <MenuItem
         v-for="child in item.children"
         :key="child.path"
