@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-16 08:50:08
- * @LastEditTime: 2021-07-31 15:21:43
+ * @LastEditTime: 2021-07-31 16:14:36
 -->
 
 <template>
@@ -11,7 +11,6 @@
       <Navbar></Navbar>
       <main class="flex-1">
         <AppMain></AppMain>
-        <!-- <router-view></router-view> -->
       </main>
       <Footer></Footer>
     </div>
