@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-16 08:50:08
- * @LastEditTime: 2021-07-26 20:39:45
+ * @LastEditTime: 2021-07-31 14:51:59
 -->
 
 <template>
@@ -21,6 +21,7 @@ import { defineComponent } from 'vue';
 import Footer from './Footer.vue';
 import Header from './Navbar.vue';
 import Menu from './Menu/index.vue';
+import ResizeHandler from './mixin/ResizeHandler';
 
 export default defineComponent({
   components: {
@@ -28,6 +29,7 @@ export default defineComponent({
     Footer,
     Menu,
   },
+  mixins: [ResizeHandler],
   setup() {},
 });
 </script>

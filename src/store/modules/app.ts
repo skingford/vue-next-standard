@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-25 00:05:01
- * @LastEditTime: 2021-07-30 17:35:31
+ * @LastEditTime: 2021-07-31 14:27:09
  */
 import { defineStore } from 'pinia';
 import { store } from '@/store';
@@ -21,13 +21,12 @@ export const useAppStore = defineStore({
   }),
   getters: {
     isCollapse(): boolean {
-      return this.projectConfig.menuSetting.isCollapse;
+      return this.projectConfig.isCollapse;
     },
   },
   actions: {
     setProjectConfig(config: DeepPartial<ProjectConfig>): void {
       this.projectConfig = deepMerge(this.projectConfig || {}, config);
-      console.log('store.projectConfig', config, this.projectConfig);
       Persistent.setLocal(PROJ_CFG_KEY, this.projectConfig);
     },
   },

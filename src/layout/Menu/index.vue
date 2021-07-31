@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-23 16:15:42
- * @LastEditTime: 2021-07-30 17:40:02
+ * @LastEditTime: 2021-07-31 11:40:44
 -->
 <template>
   <div class="flex flex-col layout-menu">
@@ -28,7 +28,6 @@
         />
       </el-menu>
     </el-scrollbar>
-    <div class="h-13">footer button</div>
   </div>
 </template>
 <script lang="ts">

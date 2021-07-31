@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-16 08:50:08
- * @LastEditTime: 2021-07-30 17:39:17
+ * @LastEditTime: 2021-07-31 14:23:32
 -->
 
 <template>
@@ -54,7 +54,7 @@ export default defineComponent({
     const store = useAppStoreWithOut();
     const toggle = () => {
       isOpen.value = !isOpen.value;
-      store.setProjectConfig({ menuSetting: { isCollapse: isOpen.value } });
+      store.setProjectConfig({ isCollapse: isOpen.value });
     };
 
     return {
