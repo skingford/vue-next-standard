@@ -1,16 +1,17 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-16 08:50:08
- * @LastEditTime: 2021-07-31 14:51:59
+ * @LastEditTime: 2021-07-31 15:21:43
 -->
 
 <template>
   <div class="flex h-full overflow-hidden">
     <Menu></Menu>
     <div class="flex flex-col flex-1">
-      <Header></Header>
+      <Navbar></Navbar>
       <main class="flex-1">
-        <router-view></router-view>
+        <AppMain></AppMain>
+        <!-- <router-view></router-view> -->
       </main>
       <Footer></Footer>
     </div>
@@ -19,15 +20,17 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Footer from './Footer.vue';
-import Header from './Navbar.vue';
+import Navbar from './Navbar.vue';
+import AppMain from './AppMain.vue';
 import Menu from './Menu/index.vue';
 import ResizeHandler from './mixin/ResizeHandler';
 
 export default defineComponent({
   components: {
-    Header,
+    Navbar,
     Footer,
     Menu,
+    AppMain,
   },
   mixins: [ResizeHandler],
   setup() {},
