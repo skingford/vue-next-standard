@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-16 08:50:08
- * @LastEditTime: 2021-07-31 14:23:32
+ * @LastEditTime: 2021-08-02 20:43:19
 -->
 
 <template>
@@ -10,7 +10,7 @@
       class="btn-toggle"
       @click="toggle"
       type="text"
-      :icon="isOpen ? 'el-icon-s-fold' : 'el-icon-s-unfold'"
+      :icon="isCollapse ? 'el-icon-s-fold' : 'el-icon-s-unfold'"
     >
     </el-button>
     <div class="right-menu">
@@ -45,20 +45,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, computed } from 'vue';
 import { useAppStoreWithOut } from '@/store/modules/app';
 
 export default defineComponent({
   setup() {
-    const isOpen = ref(false);
     const store = useAppStoreWithOut();
+    const isCollapse = computed(() => store.isCollapse);
     const toggle = () => {
-      isOpen.value = !isOpen.value;
-      store.setProjectConfig({ isCollapse: isOpen.value });
+      store.setProjectConfig({ isCollapse: !isCollapse.value });
     };
 
     return {
-      isOpen,
+      isCollapse,
       toggle,
     };
   },
