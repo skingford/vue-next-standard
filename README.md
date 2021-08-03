@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-16 08:50:08
- * @LastEditTime: 2021-07-30 10:25:44
+ * @LastEditTime: 2021-08-03 11:45:30
 -->
 
 # vue3-template
@@ -44,6 +44,35 @@
 
 - Persistent
 - storageCache
+
+```ts
+import { createSessionStorage, createLocalStorage } from '@/utils/cache';
+const storage = (isLocal ? createLocalStorage : createSessionStorage)();
+const CACHE_TIME = 60 * 60 * 24;
+
+// 设置
+storage.set('x-test-user', {
+  username: 'kingford',
+  password: '123456',
+  age: 18,
+  CACHE_TIME,
+});
+
+// 获取
+storage.get('x-test-user');
+
+// 删除
+storage.remove('x-test-user');
+
+// 清空所有
+storage.clear();
+```
+
+> PS: 在获取缓存时判断缓存是否过期
+
+```ts
+import { Memory } from '@/utils/cache/memory';
+```
 
 ## typescript
 

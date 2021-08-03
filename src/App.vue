@@ -1,10 +1,10 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-22 10:37:06
- * @LastEditTime: 2021-07-30 17:55:02
+ * @LastEditTime: 2021-08-03 15:18:33
 -->
 <template>
-  <div :class="isCollapse && 'is-mobile'" v-cloak class="h-full">
+  <div :class="isCollapse && 'is-mobile'" v-cloak class="app-container">
     <router-view></router-view>
   </div>
 </template>

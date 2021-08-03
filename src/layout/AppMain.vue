@@ -1,10 +1,9 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-31 14:58:46
- * @LastEditTime: 2021-07-31 16:14:13
+ * @LastEditTime: 2021-08-03 15:04:14
 -->
 <template>
-  <div>{{ key }}</div>
   <keep-alive :include="cachedViews">
     <router-view :key="key" />
   </keep-alive>

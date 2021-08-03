@@ -1,10 +1,10 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-23 16:15:42
- * @LastEditTime: 2021-08-02 20:41:24
+ * @LastEditTime: 2021-08-03 15:23:42
 -->
 <template>
-  <div class="flex flex-col layout-menu">
+  <div class="layout-menu">
     <div class="h-12 logo" v-if="!isCollapse">
       <img class="h-12" src="@/assets/logo.png" />
     </div>
@@ -64,21 +64,3 @@ export default defineComponent({
   },
 });
 </script>
-<style lang="scss" scoped>
-.layout-menu {
-  width: 200px;
-  .logo {
-    background: $bg-primary;
-  }
-  /* stylelint-disable */
-  :deep() {
-    .el-scrollbar__view,
-    .el-menu {
-      height: 100%;
-    }
-    .el-menu {
-      border-right-color: $el-menu-border-color;
-    }
-  }
-}
-</style>

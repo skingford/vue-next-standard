@@ -1,15 +1,15 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-16 08:50:08
- * @LastEditTime: 2021-07-31 16:14:36
+ * @LastEditTime: 2021-08-03 15:32:39
 -->
 
 <template>
-  <div class="flex h-full overflow-hidden">
+  <div class="layout">
     <Menu></Menu>
-    <div class="flex flex-col flex-1">
+    <div class="layout-container">
       <Navbar></Navbar>
-      <main class="flex-1">
+      <main class="layout-main">
         <AppMain></AppMain>
       </main>
       <Footer></Footer>

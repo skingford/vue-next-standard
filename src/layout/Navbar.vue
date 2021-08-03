@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-16 08:50:08
- * @LastEditTime: 2021-08-02 20:43:19
+ * @LastEditTime: 2021-08-03 15:02:30
 -->
 
 <template>
@@ -69,6 +69,7 @@ export default defineComponent({
   overflow: hidden;
   position: relative;
   background: #ffffff;
+  flex-shrink: 0;
   box-shadow: 0 1px 4px $color-shadow;
 
   .btn-toggle {

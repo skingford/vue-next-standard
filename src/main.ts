@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-29 12:41:35
+ * @LastEditTime: 2021-08-03 14:16:45
  */
 
 // global styles
@@ -21,6 +21,7 @@ import {
   setupGlobalProperties,
 } from '@utils/globalProperties';
 import { registerGlobalComponent } from '@/components';
+import { initAppConfigStore } from '@/logics/initAppConfig';
 
 import App from './App.vue';
 
@@ -29,6 +30,9 @@ async function bootstrap() {
 
   // config store
   setupStore(app);
+
+  // init app config
+  initAppConfigStore();
 
   // configure routing
   setupRouter(app);
