@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-22 09:22:58
+ * @LastEditTime: 2021-08-03 20:03:40
 -->
 <template>
   <h1>{{ msg }}</h1>
@@ -11,10 +11,7 @@
     Recommended IDE setup:
     <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
     +
-    <a
-      href="https://marketplace.visualstudio.com/items?itemName=octref.vetur"
-      target="_blank"
-    >
+    <a href="https://marketplace.visualstudio.com/items?itemName=octref.vetur" target="_blank">
       Vetur
     </a>
     or
@@ -26,9 +23,7 @@
   <p>See <code>README.md</code> for more information.</p>
 
   <p>
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">
-      Vite Docs
-    </a>
+    <a href="https://vitejs.dev/guide/features.html" target="_blank"> Vite Docs </a>
     |
     <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
   </p>
@@ -42,14 +37,7 @@
 </template>
 
 <script lang="ts">
-import {
-  ref,
-  defineComponent,
-  reactive,
-  toRefs,
-  computed,
-  watchEffect,
-} from 'vue';
+import { ref, defineComponent, reactive, toRefs, computed } from 'vue';
 export default defineComponent({
   name: 'HelloWorld',
   props: {

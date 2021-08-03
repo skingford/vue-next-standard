@@ -1,16 +1,15 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-31 13:40:05
- * @LastEditTime: 2021-07-31 14:50:12
+ * @LastEditTime: 2021-08-03 20:23:20
  */
-
-import { useAppStoreWithOut } from '../../store/modules/app';
+import { defineComponent } from 'vue';
+import { useAppStoreWithOut } from '@/store/modules/app';
 const { body } = document;
 const WIDTH = 992; // refer to Bootstrap's responsive design
-
 const store = useAppStoreWithOut();
 
-export default {
+export default defineComponent({
   beforeMount() {
     window.addEventListener('resize', this.$_resizeHandler);
   },
@@ -38,4 +37,4 @@ export default {
       }
     },
   },
-};
+});

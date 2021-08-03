@@ -1,8 +1,7 @@
-import { router } from './../index';
 /*
  * @Author: kingford
- * @Date: 2021-07-24 10:41:56
- * @LastEditTime: 2021-07-27 19:33:52
+ * @Date: 2021-07-26 08:50:06
+ * @LastEditTime: 2021-08-03 20:06:09
  */
 import { PageEnum } from '@/enums/pageEnum';
 import { AppRouteModule, AppRouteRecordRaw } from '@/router/types';

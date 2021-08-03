@@ -1,10 +1,10 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-26 09:55:23
- * @LastEditTime: 2021-07-26 10:10:18
+ * @LastEditTime: 2021-08-03 20:09:04
  */
 
-export function checkStatus(status: number, msg: string): void {
+export function checkStatus(status: number, msg: string = 'not found'): void {
   switch (status) {
     case 400:
       msg = 'not found';

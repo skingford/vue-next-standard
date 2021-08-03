@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-27 19:42:22
- * @LastEditTime: 2021-07-27 19:55:29
+ * @LastEditTime: 2021-08-03 20:21:02
  */
 import { defineStore } from 'pinia';
 import { store } from '@/store';
@@ -11,7 +11,7 @@ import { RoleEnum } from '@/enums/roleEnum';
 
 function hasPermission(roles: RoleEnum[], route: AppRouteModule) {
   if (route.meta && route.meta.roles) {
-    return roles.some((role) => route.meta.roles.includes(role));
+    return roles.some((role) => route.meta.roles?.includes(role));
   } else {
     return true;
   }
@@ -22,6 +22,7 @@ export function filterAsyncRoutes(routes: AppRouteModule[], roles) {
 
   routes.forEach((route) => {
     const tmp: AppRouteModule = { ...route };
+
     if (hasPermission(roles, tmp)) {
       if (tmp.children) {
         tmp.children = filterAsyncRoutes(tmp.children, roles);
