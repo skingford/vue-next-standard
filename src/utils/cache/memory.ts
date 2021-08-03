@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-26 08:50:06
- * @LastEditTime: 2021-07-27 20:11:05
+ * @LastEditTime: 2021-08-03 11:42:47
  */
 export interface Cache<V = any> {
   value?: V;

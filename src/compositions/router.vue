@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-30 15:14:37
- * @LastEditTime: 2021-08-02 20:39:38
+ * @LastEditTime: 2021-08-03 11:46:59
 -->
 <template>
   <div>
@@ -21,8 +21,15 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { Memory } from '@/utils/cache/memory';
 
-export default defineComponent({});
+export default defineComponent({
+  setup() {
+    const storage = new Memory(60);
+    storage.set('name', { name: 'kingford', age: 18 });
+    console.log(storage.get('name'));
+  },
+});
 </script>
 <style lang="scss" scoped>
 .flex-sub {

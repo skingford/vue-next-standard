@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-16 01:17:32
- * @LastEditTime: 2021-07-25 21:06:12
+ * @LastEditTime: 2021-08-03 11:04:34
  */
 import { getStorageShortName } from '@/utils/env';
 import { createStorage as create, CreateStorageParams } from './storageCache';
@@ -33,15 +33,15 @@ export const createStorage = (
 
 export const createSessionStorage = (options: Options = {}) => {
   return createStorage(sessionStorage, {
-    ...options,
     timeout: DEFAULT_CACHE_TIME,
+    ...options,
   });
 };
 
 export const createLocalStorage = (options: Options = {}) => {
   return createStorage(localStorage, {
-    ...options,
     timeout: DEFAULT_CACHE_TIME,
+    ...options,
   });
 };
 
