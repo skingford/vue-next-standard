@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-16 08:50:08
- * @LastEditTime: 2021-08-03 19:03:20
+ * @LastEditTime: 2021-08-03 19:24:30
 -->
 
 # vue3-template
@@ -78,6 +78,12 @@ import { Memory } from '@/utils/cache/memory';
 ## typescript
 
 - Recordable
+
+## vue
+
+```vue
+::v-deep(.pagination-disabled) { display: inline-block !important; }
+```
 
 ## 注意
 
