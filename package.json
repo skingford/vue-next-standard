@@ -45,7 +45,6 @@
     "stylelint-config-standard": "^22.0.0",
     "stylelint-webpack-plugin": "^2.2.2",
     "svg-sprite-loader": "^6.0.9",
-    "tailwindcss": "^2.2.4",
     "typescript": "^4.3.5",
     "vite": "^2.4.2",
     "vite-plugin-compression": "^0.3.1",
@@ -54,7 +53,9 @@
     "vite-plugin-pwa": "^0.8.2",
     "vite-plugin-style-import": "^1.0.1",
     "vite-plugin-svg-icons": "^1.0.1",
-    "vue-tsc": "^0.2.1"
+    "vite-plugin-windicss": "^1.2.7",
+    "vue-tsc": "^0.2.1",
+    "windicss": "^3.1.6"
   },
   "resolutions": {
     "bin-wrapper": "npm:bin-wrapper-china"

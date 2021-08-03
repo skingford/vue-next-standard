@@ -1,11 +1,12 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-29 10:44:50
- * @LastEditTime: 2021-07-30 01:51:13
+ * @LastEditTime: 2021-08-03 18:56:20
  */
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import legacy from '@vitejs/plugin-legacy';
+import windiCSS from 'vite-plugin-windicss';
 
 // 自定义插件配置
 import { configHmrPlugin } from './hmr';
@@ -23,7 +24,11 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
     VITE_BUILD_COMPRESS,
     VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE,
   } = viteEnv;
+
   const vitePlugins = [vue(), vueJsx()];
+
+  // vite-plugin-windicss
+  vitePlugins.push(windiCSS());
 
   !isBuild && vitePlugins.push(configHmrPlugin());
 
@@ -31,7 +36,7 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   VITE_LEGACY && isBuild && vitePlugins.push(legacy());
 
   // vite-plugin-html
-  vitePlugins.push(configHtmlPlugin(viteEnv, isBuild) as any);
+  vitePlugins.push(configHtmlPlugin(viteEnv, isBuild));
 
   // vite-plugin-svg-icons
   vitePlugins.push(configSvgIconsPlugin(isBuild));

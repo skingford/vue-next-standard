@@ -1,12 +1,12 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-23 16:15:42
- * @LastEditTime: 2021-08-03 15:23:42
+ * @LastEditTime: 2021-08-03 16:06:38
 -->
 <template>
   <div class="layout-menu">
     <div class="h-12 logo" v-if="!isCollapse">
-      <img class="h-12" src="@/assets/logo.png" />
+      <img class="h-12" src="@/assets/logo.svg" />
     </div>
 
     <el-scrollbar class="flex-1">

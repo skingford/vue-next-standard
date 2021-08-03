@@ -1,10 +1,10 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-22 10:37:06
- * @LastEditTime: 2021-08-03 15:18:33
+ * @LastEditTime: 2021-08-03 19:05:12
 -->
 <template>
-  <div :class="isCollapse && 'is-mobile'" v-cloak class="app-container">
+  <div :class="['app-container', isCollapse && 'is-mobile']" v-cloak>
     <router-view></router-view>
   </div>
 </template>

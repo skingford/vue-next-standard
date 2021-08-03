@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-16 08:50:08
- * @LastEditTime: 2021-08-03 11:45:30
+ * @LastEditTime: 2021-08-03 19:03:20
 -->
 
 # vue3-template
@@ -28,6 +28,7 @@
 
 - [element-plus](https://element-plus.gitee.io/#/zh-CN/component/button)
 
+- [windicss](https://windicss.org/integrations/vite.html)
 - [tailwindcss](https://tailwindcss.com/docs/theme)
 
 - [dayjs](https://dayjs.gitee.io/docs/zh-CN/display/format)

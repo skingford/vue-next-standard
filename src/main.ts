@@ -1,14 +1,15 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-08-03 14:16:45
+ * @LastEditTime: 2021-08-03 18:57:49
  */
 
 // global styles
 import 'normalize.css/normalize.css';
-import '@/styles/tailwind.css';
 import '@/styles/index.scss';
 
+// Register windi
+import 'virtual:windi.css';
 // Register icon sprite
 import 'virtual:svg-icons-register';
 
