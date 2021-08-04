@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-08-04 10:00:00
+ * @LastEditTime: 2021-08-04 11:26:53
  */
 import { resolve } from 'path';
 import type { UserConfig, ConfigEnv } from 'vite';

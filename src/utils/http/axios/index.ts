@@ -24,10 +24,7 @@ const transform: AxiosTransform = {
   /**
    * @description: 处理请求数据。如果数据不是预期格式，可直接抛出错误
    */
-  transformRequestHook: (
-    res: AxiosResponse<Result>,
-    options: RequestOptions
-  ) => {
+  transformRequestHook: (res: AxiosResponse<Result>, options: RequestOptions) => {
     const { isTransformResponse, isReturnNativeResponse } = options;
     // 是否返回原生响应头 比如：需要获取响应头时使用该属性
     if (isReturnNativeResponse) {
@@ -49,8 +46,7 @@ const transform: AxiosTransform = {
     const { code, result, message } = data;
 
     // 这里逻辑可以根据项目进行修改
-    const hasSuccess =
-      data && Reflect.has(data, 'code') && code === ResultEnum.SUCCESS;
+    const hasSuccess = data && Reflect.has(data, 'code') && code === ResultEnum.SUCCESS;
     if (hasSuccess) {
       return result;
     }
@@ -79,13 +75,7 @@ const transform: AxiosTransform = {
 
   // 请求之前处理config
   beforeRequestHook: (config, options) => {
-    const {
-      apiUrl,
-      joinPrefix,
-      joinParamsToUrl,
-      formatDate,
-      joinTime = true,
-    } = options;
+    const { apiUrl, joinPrefix, joinParamsToUrl, formatDate, joinTime = true } = options;
 
     if (joinPrefix) {
       config.url = `${urlPrefix}${config.url}`;
@@ -100,10 +90,7 @@ const transform: AxiosTransform = {
     if (config.method?.toUpperCase() === RequestEnum.GET) {
       if (!isString(params)) {
         // 给 get 请求加上时间戳参数，避免从缓存中拿数据。
-        config.params = Object.assign(
-          params || {},
-          joinTimestamp(joinTime, false)
-        );
+        config.params = Object.assign(params || {}, joinTimestamp(joinTime, false));
       } else {
         // 兼容restful风格
         config.url = config.url + params + `${joinTimestamp(joinTime, true)}`;
@@ -112,11 +99,7 @@ const transform: AxiosTransform = {
     } else {
       if (!isString(params)) {
         formatDate && formatRequestDate(params);
-        if (
-          Reflect.has(config, 'data') &&
-          config.data &&
-          Object.keys(config.data).length > 0
-        ) {
+        if (Reflect.has(config, 'data') && config.data && Object.keys(config.data).length > 0) {
           config.data = data;
           config.params = params;
         } else {
@@ -172,6 +155,7 @@ const transform: AxiosTransform = {
     const msg: string = response?.data?.error?.message ?? '';
     const err: string = error?.toString?.() ?? '';
     let errMessage = '';
+    console.log(msg);
 
     try {
       if (code === 'ECONNABORTED' && message.indexOf('timeout') !== -1) {
@@ -191,7 +175,7 @@ const transform: AxiosTransform = {
       throw new Error(error as string);
     }
 
-    checkStatus(error?.response?.status, msg);
+    checkStatus(error?.response?.status);
     return Promise.reject(error);
   },
 };

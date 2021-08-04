@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-08-03 18:57:49
+ * @LastEditTime: 2021-08-04 11:17:16
  */
 
 // global styles
@@ -17,10 +17,7 @@ import { createApp } from 'vue';
 import { setupRouter, router } from '@/router';
 import { setupRouterGuard } from '@/router/guard';
 import { setupStore } from '@/store';
-import {
-  setupElementPlus,
-  setupGlobalProperties,
-} from '@utils/globalProperties';
+import { setupElementPlus, setupGlobalProperties } from '@/utils/globalProperties';
 import { registerGlobalComponent } from '@/components';
 import { initAppConfigStore } from '@/logics/initAppConfig';
 
