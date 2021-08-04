@@ -151,7 +151,9 @@
     "tailwindcss",
     "sider"
   ],
-  "cSpell.ignoreWords": ["VITE", "menu", "mixins"], // 关闭vetur对vue3根节点的检查
+  "cSpell.ignoreWords": ["VITE", "vuex", "windicss", "menu", "mixins"],
+  "files.autoSave": "onFocusChange",
+  // 关闭vetur对vue3根节点的检查
   "vetur.validation.template": false,
   "vetur.validation.script": false,
   "vetur.validation.style": false
