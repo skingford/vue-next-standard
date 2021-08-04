@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-24 21:00:50
- * @LastEditTime: 2021-08-04 16:52:17
+ * @LastEditTime: 2021-08-04 16:54:52
 -->
 <template>
   <div class="login">
@@ -10,11 +10,9 @@
       <div class="switch-login-mode-wrapper">
         <div class="switch-logo-box"></div>
       </div>
-
       <div class="login-title"> 登录系统 </div>
-
       <el-form :model="loginFormModel" :rules="rules" ref="loginFormRef" label-width="60px">
-        <el-form-item class="input-item" label="用户名" prop="username" :isRequired="false">
+        <el-form-item class="input-item" label="账号" prop="username" :isRequired="false">
           <el-input type="text" v-model="loginFormModel.username" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item class="input-item" label="密码" prop="password" :required="false">
