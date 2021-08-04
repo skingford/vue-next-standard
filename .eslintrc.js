@@ -1,76 +1,83 @@
 /*
  * @Author: kingford
- * @Date: 2021-06-08 19:48:14
- * @LastEditTime: 2021-06-14 22:44:02
+ * @Date: 2021-07-16 08:50:08
+ * @LastEditTime: 2021-08-04 10:13:25
  */
-const DOMGlobals = ['window', 'document']
-const NodeGlobals = ['module', 'require']
-
-module.exports = {
-  parser: '@typescript-eslint/parser',
+// @ts-check
+const { defineConfig } = require('eslint-define-config');
+module.exports = defineConfig({
+  root: true,
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+  },
+  parser: 'vue-eslint-parser',
   parserOptions: {
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 2020,
     sourceType: 'module',
+    jsxPragma: 'React',
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
   extends: [
     'plugin:vue/vue3-recommended',
-    'plugin:vue/essential',
-    '@vue/prettier',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'plugin:prettier/recommended',
+    'plugin:jest/recommended',
   ],
   rules: {
+    '@typescript-eslint/ban-ts-ignore': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
+    'vue/custom-event-name-casing': 'off',
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/ban-types': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
+    ],
     'no-unused-vars': [
       'error',
-      // we are only using this rule to check for unused arguments since TS
-      // catches unused variables but not args.
-      { varsIgnorePattern: '.*', args: 'none' },
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
     ],
-    // most of the codebase are expected to be env agnostic
-    'no-restricted-globals': ['error', ...DOMGlobals, ...NodeGlobals],
-    // since we target ES2015 for baseline support, we need to forbid object
-    // rest spread usage (both assign and destructure)
-    'no-restricted-syntax': [
+    'space-before-function-paren': 'off',
+
+    'vue/attributes-order': 'off',
+    'vue/one-component-per-file': 'off',
+    'vue/html-closing-bracket-newline': 'off',
+    'vue/max-attributes-per-line': 'off',
+    'vue/multiline-html-element-content-newline': 'off',
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/attribute-hyphenation': 'off',
+    'vue/require-default-prop': 'off',
+    'vue/script-setup-uses-vars': 'off',
+    'vue/html-self-closing': [
       'error',
-      'ObjectExpression > SpreadElement',
-      'ObjectPattern > RestElement',
+      {
+        html: {
+          void: 'always',
+          normal: 'never',
+          component: 'always',
+        },
+        svg: 'always',
+        math: 'always',
+      },
     ],
   },
-  overrides: [
-    // tests, no restrictions (runs in Node / jest with jsdom)
-    {
-      files: ['**/__tests__/**', 'test-dts/**'],
-      rules: {
-        'no-restricted-globals': 'off',
-        'no-restricted-syntax': 'off',
-      },
-    },
-    // shared, may be used in any env
-    {
-      files: ['packages/shared/**'],
-      rules: {
-        'no-restricted-globals': 'off',
-      },
-    },
-    // Packages targeting DOM
-    {
-      files: ['packages/{vue,vue-compat,runtime-dom}/**'],
-      rules: {
-        'no-restricted-globals': ['error', ...NodeGlobals],
-      },
-    },
-    // Packages targeting Node
-    {
-      files: ['packages/{compiler-sfc,compiler-ssr,server-renderer}/**'],
-      rules: {
-        'no-restricted-globals': ['error', ...DOMGlobals],
-        'no-restricted-syntax': 'off',
-      },
-    },
-    // Private package, browser only + no syntax restrictions
-    {
-      files: ['packages/template-explorer/**', 'packages/sfc-playground/**'],
-      rules: {
-        'no-restricted-globals': ['error', ...NodeGlobals],
-        'no-restricted-syntax': 'off',
-      },
-    },
-  ],
-}
+});

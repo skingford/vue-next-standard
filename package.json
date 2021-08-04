@@ -5,15 +5,18 @@
     "dev": "vite --mode development",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview --port 8080",
-    "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml"
+    "svgo": "svgo -f src/assets/icons/svg --config=src/icons/svgo.yml"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
     "@vueuse/core": "^5.2.0",
     "axios": "^0.21.1",
     "crypto-js": "^4.1.1",
     "dayjs": "^1.10.6",
     "echarts": "^5.1.2",
     "element-plus": "^1.0.2-beta.65",
+    "eslint-define-config": "^1.0.9",
     "lodash-es": "^4.17.21",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",

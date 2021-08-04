@@ -1,9 +1,10 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-25 11:39:33
- * @LastEditTime: 2021-08-04 09:15:16
+ * @LastEditTime: 2021-08-04 09:55:02
  */
 import type { GlobEnvConfig } from '#/types/config';
+// import type { GlobEnvConfig } from '../../types/config';
 
 import { warn } from '@/utils/log';
 import pkg from '../../package.json';

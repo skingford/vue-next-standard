@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-08-04 08:56:49
+ * @LastEditTime: 2021-08-04 10:00:00
  */
 import { resolve } from 'path';
 import type { UserConfig, ConfigEnv } from 'vite';
@@ -42,7 +42,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         '@utils': pathResolve('src/utils'),
       },
     },
-
     // 定义全局常量
     define: {
       __INTLIFY_PROD_DEVTOOLS__: false,
