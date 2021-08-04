@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-26 11:50:00
- * @LastEditTime: 2021-07-30 17:55:27
+ * @LastEditTime: 2021-08-04 09:09:41
 -->
 <template>
   <div v-if="!item.hidden">
@@ -25,18 +25,9 @@
       </app-link>
     </template>
 
-    <el-submenu
-      v-else
-      ref="subMenu"
-      :index="resolvePath(item.path)"
-      popper-append-to-body
-    >
+    <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
       <template #title>
-        <LinkItem
-          v-if="item.meta"
-          :icon="item.meta && item.meta.icon"
-          :title="item.meta.title"
-        />
+        <LinkItem v-if="item.meta" :icon="item.meta && item.meta.icon" :title="item.meta.title" />
       </template>
       <MenuItem
         v-for="child in item.children"

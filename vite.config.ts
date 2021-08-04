@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-30 09:41:19
+ * @LastEditTime: 2021-08-04 08:56:49
  */
 import { resolve } from 'path';
 import type { UserConfig, ConfigEnv } from 'vite';
@@ -30,8 +30,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, root);
   const viteEnv = wrapperEnv(env);
   const isBuild = command === 'build';
-  const { VITE_PORT, VITE_PUBLIC_PATH, VITE_PROXY, VITE_DROP_CONSOLE } =
-    viteEnv;
+  const { VITE_PORT, VITE_PUBLIC_PATH, VITE_PROXY, VITE_DROP_CONSOLE } = viteEnv;
 
   return {
     base: VITE_PUBLIC_PATH,
@@ -39,7 +38,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     resolve: {
       alias: {
         '@': pathResolve('src'),
-        '@types': pathResolve('types'),
+        '#': pathResolve('types'),
         '@utils': pathResolve('src/utils'),
       },
     },

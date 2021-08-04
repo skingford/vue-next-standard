@@ -24,7 +24,7 @@
     // add path
     "paths": {
       "@/*": ["src/*"],
-      "@types/*": ["types/*"],
+      "#/*": ["types/*"],
       "@utils/*": ["src/utils/*"]
     }
   },
