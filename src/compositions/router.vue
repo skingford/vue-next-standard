@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-30 15:14:37
- * @LastEditTime: 2021-08-03 11:46:59
+ * @LastEditTime: 2021-08-04 14:55:06
 -->
 <template>
   <div>
@@ -15,6 +15,8 @@
       </div>
     </div>
     <div>
+      <el-date-picker type="date" placeholder="选择日期"> </el-date-picker>
+      <el-button type="primary">主要按钮</el-button>
       <router-link to="/compositions/ref"></router-link>
     </div>
   </div>

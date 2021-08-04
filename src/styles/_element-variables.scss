@@ -1,2 +1,10 @@
 $--color-primary: #67c23a;
 $el-menu-border-color: #304156;
+$--el-input-hover-border: #c0c4cc;
+
+.el-button--primary:hover,
+.el-button--primary:focus {
+  background: #66b1ff;
+  border-color: #66b1ff;
+  color: #ffffff;
+}

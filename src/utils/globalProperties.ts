@@ -1,14 +1,14 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-21 15:22:03
- * @LastEditTime: 2021-08-03 20:07:32
+ * @LastEditTime: 2021-08-04 15:20:06
  */
 
 import { App } from 'vue';
 import { ElMessage } from 'element-plus';
 import useElement from '@/hooks/useElement';
 
-const option = { size: 'mini' };
+const option = { size: 'small' };
 
 export function setupGlobalProperties(app: App) {
   app.config.globalProperties.$message = ElMessage;

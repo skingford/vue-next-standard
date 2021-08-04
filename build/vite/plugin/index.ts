@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-29 10:44:50
- * @LastEditTime: 2021-08-03 20:03:53
+ * @LastEditTime: 2021-08-04 15:27:33
  */
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
@@ -11,7 +11,7 @@ import windiCSS from 'vite-plugin-windicss';
 // 自定义插件配置
 import { configHmrPlugin } from './hmr';
 import { configSvgIconsPlugin } from './svgSprite';
-import { configStyleImportPlugin } from './styleImport';
+//import { configStyleImportPlugin } from './styleImport';
 import { configHtmlPlugin } from './html';
 import { configImageminPlugin } from './imagemin';
 import { configCompressPlugin } from './compress';
@@ -42,7 +42,7 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   vitePlugins.push(configSvgIconsPlugin(isBuild));
 
   // vite-plugin-style-import
-  vitePlugins.push(configStyleImportPlugin());
+  //vitePlugins.push(configStyleImportPlugin());
 
   // The following plugins only work in the production environment
   if (isBuild) {

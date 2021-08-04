@@ -1,15 +1,15 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-08-04 14:13:16
+ * @LastEditTime: 2021-08-04 15:27:58
  */
 
 // global styles
 import 'normalize.css/normalize.css';
+import 'virtual:windi.css';
+import 'element-plus/lib/theme-chalk/index.css';
 import '@/styles/index.scss';
 
-// Register windi
-import 'virtual:windi.css';
 // Register icon sprite
 import 'virtual:svg-icons-register';
 
