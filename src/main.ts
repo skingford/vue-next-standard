@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-08-04 11:17:16
+ * @LastEditTime: 2021-08-04 14:13:16
  */
 
 // global styles
@@ -14,12 +14,13 @@ import 'virtual:windi.css';
 import 'virtual:svg-icons-register';
 
 import { createApp } from 'vue';
+import { setupStore } from '@/store';
+import { setupErrorHandle } from '@/logics/error-handle';
 import { setupRouter, router } from '@/router';
 import { setupRouterGuard } from '@/router/guard';
-import { setupStore } from '@/store';
-import { setupElementPlus, setupGlobalProperties } from '@/utils/globalProperties';
 import { registerGlobalComponent } from '@/components';
 import { initAppConfigStore } from '@/logics/initAppConfig';
+import { setupElementPlus, setupGlobalProperties } from '@/utils/globalProperties';
 
 import App from './App.vue';
 
@@ -46,6 +47,10 @@ async function bootstrap() {
   // register global components
   registerGlobalComponent(app);
 
+  // register error handle
+  setupErrorHandle(app);
+
+  // https://next.router.vuejs.org/api/#isready
   await router.isReady();
 
   app.mount('#app');
