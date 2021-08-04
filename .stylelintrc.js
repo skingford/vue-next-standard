@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-14 22:23:09
- * @LastEditTime: 2021-08-03 19:22:05
+ * @LastEditTime: 2021-08-04 16:10:03
  */
 module.exports = {
   root: true,
@@ -52,13 +52,13 @@ module.exports = {
     'selector-pseudo-class-no-unknown': [
       true,
       {
-        ignorePseudoClasses: ['global'],
+        ignorePseudoClasses: ['global', 'v-deep', 'deep'],
       },
     ],
     'selector-pseudo-element-no-unknown': [
       true,
       {
-        ignorePseudoElements: ['v-deep'],
+        ignorePseudoElements: ['v-deep', 'deep'],
       },
     ],
     'unit-no-unknown': [true, { ignoreUnits: ['rpx'] }],

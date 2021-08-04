@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-16 08:50:08
- * @LastEditTime: 2021-08-03 19:24:30
+ * @LastEditTime: 2021-08-04 16:11:26
 -->
 
 # vue3-template
@@ -85,6 +85,10 @@ import { Memory } from '@/utils/cache/memory';
 ::v-deep(.pagination-disabled) { display: inline-block !important; }
 ```
 
+```vue
+:deep(.pagination-disabled) { display: inline-block !important; }
+```
+
 ## 注意
 
 1. 推荐使用 yarn 安装
@@ -97,7 +101,3 @@ import { Memory } from '@/utils/cache/memory';
 ```bash
 node node_modules/esbuild/install.js
 ```
-
-2.别名引入声明文件
-
-3.:deep 类型检测
