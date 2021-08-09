@@ -1,9 +1,14 @@
 {
   "name": "vue3-admin-template",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "author": {
+    "name": "VAT"
+  },
   "scripts": {
     "dev": "vite --mode development",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "cross-env NODE_ENV=production vite build && esno ./build/script/postBuild.ts",
+    "build:test": "cross-env vite build --mode test && esno ./build/script/postBuild.ts",
+    "build:no-cache": "yarn clean:cache && npm run build",
     "serve": "vite preview --port 8080",
     "svgo": "svgo -f src/assets/icons/svg --config=src/icons/svgo.yml"
   },
@@ -35,10 +40,12 @@
     "@vue/compiler-sfc": "^3.1.5",
     "@vue/eslint-config-prettier": "^6.0.0",
     "autoprefixer": "^10.3.1",
+    "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
     "eslint-define-config": "^1.0.9",
     "eslint-plugin-vue": "^7.15.1",
+    "esno": "^0.8.0",
     "husky": "^7.0.1",
     "lint-staged": "^11.1.2",
     "postcss": "^8.3.6",
