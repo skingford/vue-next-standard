@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-16 00:36:38
- * @LastEditTime: 2021-07-26 20:34:05
+ * @LastEditTime: 2021-08-10 15:08:28
  */
 import type { AppRouteModule } from '../../types';
 import { LAYOUT } from '@/router/constant';
@@ -34,6 +34,15 @@ const dashboard: AppRouteModule = {
       meta: {
         icon: 'el-icon-menu',
         title: 'Workbench',
+      },
+    },
+    {
+      path: 'print',
+      name: 'Print',
+      component: () => import('@/views/dashboard/print/index.vue'),
+      meta: {
+        icon: 'el-icon-menu',
+        title: 'print',
       },
     },
   ],

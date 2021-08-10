@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-14 22:23:09
- * @LastEditTime: 2021-08-04 16:10:03
+ * @LastEditTime: 2021-08-10 15:29:17
  */
 module.exports = {
   root: true,
@@ -62,7 +62,7 @@ module.exports = {
       },
     ],
     'unit-no-unknown': [true, { ignoreUnits: ['rpx'] }],
-    'unit-whitelist': ['em', 'rem', '%', 's', 'px', 'deg', 'vh', 'vw'],
+    'unit-whitelist': ['em', 'rem', '%', 's', 'px', 'deg', 'vh', 'vw', 'mm'],
     'unit-case': 'lower',
     'value-keyword-case': 'lower',
     'no-empty-source': null,
