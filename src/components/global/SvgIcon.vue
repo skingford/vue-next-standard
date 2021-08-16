@@ -1,15 +1,15 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-29 11:05:14
- * @LastEditTime: 2021-07-29 14:48:16
+ * @LastEditTime: 2021-08-16 15:16:47
 -->
 <template>
   <svg
-    :class="[$attrs.class, spin && 'svg-icon-spin']"
+    :class="['svg-icon', $attrs.class, spin && 'svg-icon-spin']"
     :style="getStyle"
     aria-hidden="true"
   >
-    <use :xlink:href="symbolId" :fill="color" />
+    <use :xlink:href="symbolId" />
   </svg>
 </template>
 <script lang="ts">
@@ -30,10 +30,6 @@ export default defineComponent({
     size: {
       type: [Number, String],
       default: 16,
-    },
-    color: {
-      type: String,
-      default: '#333',
     },
     spin: {
       type: Boolean,
@@ -59,5 +55,9 @@ export default defineComponent({
 <style lang="scss" scoped>
 .svg-icon-spin {
   animation: loadingCircle 1s infinite linear;
+}
+
+.svg-icon {
+  fill: currentColor;
 }
 </style>
